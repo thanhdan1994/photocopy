@@ -11,9 +11,13 @@
 |
 */
 // route front
-Route::get('/', function () {
-    return view('welcome');
-});
+Route::get('/', 'HomeController@index');
+Route::get('/dich-vu', 'HomeController@services');
+Route::get('/gioi-thieu', 'HomeController@introduce');
+Route::get('/chia-se-tu-van', 'HomeController@recommended');
+Route::get('/chia-se-tu-van/{slug}.html', 'HomeController@share');
+Route::get('/dich-vu/{slug}.html', 'HomeController@show');
+
 // route admin
 Route::group(['prefix' => 'admin', 'as' => 'admin.' ], function () {
     Route::namespace('Admin')->group(function () {

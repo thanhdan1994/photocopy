@@ -4,8 +4,12 @@
 
     <!-- Links -->
     <ul class="navbar-nav">
-        <li class="nav-item">
-            <a class="nav-link" href="{{route('admin.services.index')}}">Quản lý dịch vụ</a>
+        <li class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle" id="navbardrop" data-toggle="dropdown">Quản lý dịch vụ</a>
+            <div class="dropdown-menu">
+                <a class="dropdown-item" href="{{route('admin.services.index')}}">Danh sách dịch vụ</a>
+                <a class="dropdown-item" href="{{route('admin.services.create')}}">Thêm dịch vụ mới</a>
+            </div>
         </li>
         <li class="nav-item">
             <a class="nav-link" href="#">Quản lý sản phẩm</a>

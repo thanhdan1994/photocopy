@@ -21,6 +21,11 @@
                     </div>
                 </div>
             </div>
+            <div class="form-check">
+                <label class="form-check-label">
+                    <input type="checkbox" class="form-check-input" name="type" @if($service->type) checked @endif>Là dịch vụ
+                </label>
+            </div>
             <input type="file" name="photo" class="form-control" />
             <button type="submit" class="btn btn-primary">Save</button>
         </form>

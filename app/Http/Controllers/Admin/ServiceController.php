@@ -45,6 +45,7 @@ class ServiceController extends Controller
             $services->slug = Str::slug($request->input('name'), '-');
             $services->description = $request->input('description');
             $services->cover = $path;
+            $services->type = !empty($request->input('type')) ? 1 : 0;
             if ($services->save()) {
                 return redirect()->route('admin.services.index');
             }
@@ -92,6 +93,7 @@ class ServiceController extends Controller
         $service->name = $request->input('name');
         $service->slug = Str::slug($request->input('name'), '-');
         $service->description = $request->input('description');
+        $service->type = !empty($request->input('type')) ? 1 : 0;
         if ($request->file('photo')) {
             $path = $request->file('photo')->store('thumb', 'public_uploads');
             $service->cover = $path;
