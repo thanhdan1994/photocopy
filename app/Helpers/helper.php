@@ -93,8 +93,8 @@ if (!function_exists('regexContent')) {
     }
 }
 
-if (!function_exists('ddd')) {
-    function ddd($data)
+if (!function_exists('debug')) {
+    function debug($data)
     {
         echo '<pre>';
         var_dump($data);

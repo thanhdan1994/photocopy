@@ -24,7 +24,7 @@
         <div class="container">
             <div class="row">
                 <div class="col-md-12">
-                    {!!regexContent($post->body)!!}
+                    {!!regexContent($introduce->description)!!}
                 </div> <!-- .col-md-12 -->
             </div>
         </div>

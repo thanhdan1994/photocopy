@@ -14,7 +14,7 @@
                             <h2 class="ftco-heading-2">Dịch vụ của chúng tôi</h2>
                             <ul class="list-unstyled">
                                 @foreach($hotServices as $key => $post)
-                                <li><a href="{{$post->slug . '.html'}}" class="py-2 d-block">{{$post->title}}</a></li>
+                                <li><a href="/dich-vu/{{$post->slug . '.html'}}" class="py-2 d-block">{{$post->name}}</a></li>
                                 @endforeach
                             </ul>
                         </div>
