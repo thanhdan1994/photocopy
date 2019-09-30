@@ -8147,7 +8147,8 @@ textarea.form-control {
         display: inline-block;
         margin-right: 10px;
         margin-bottom: 10px;
-        opacity: .6; }
+        opacity: .6;
+        font-size: larger}
     .block-5 .text .excerpt {
       line-height: 1.4;
       color: #fff; }

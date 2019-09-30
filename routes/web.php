@@ -17,6 +17,7 @@ Route::get('/gioi-thieu.html', 'HomeController@introduce');
 Route::get('/chia-se-tu-van', 'HomeController@share');
 Route::get('/chia-se-tu-van/{slug}.html', 'HomeController@shareShow');
 Route::get('/dich-vu/{slug}.html', 'HomeController@show');
+Route::get('/ban-may-photo/{slug}/{id}.html', 'ProductController@sellByCategory');
 
 // route admin
 Route::group(['prefix' => 'admin', 'as' => 'admin.' ], function () {
@@ -24,7 +25,9 @@ Route::group(['prefix' => 'admin', 'as' => 'admin.' ], function () {
         Route::get('/', 'DashboardController@index');
         Route::resources([
             'services' => 'ServiceController',
-            'introduces' => 'IntroduceController'
+            'introduces' => 'IntroduceController',
+            'products' => 'ProductController',
+            'categories' => 'CategoryController'
         ]);
     });
 });

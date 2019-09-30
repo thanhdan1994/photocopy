@@ -11,20 +11,19 @@
                 <a class="dropdown-item" href="{{route('admin.services.create')}}">Thêm dịch vụ mới</a>
             </div>
         </li>
-        <li class="nav-item">
-            <a class="nav-link" href="#">Quản lý sản phẩm</a>
+        <li class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle" id="navbardrop" data-toggle="dropdown">Quản lý sản phẩm</a>
+            <div class="dropdown-menu">
+                <a class="dropdown-item" href="{{route('admin.products.index')}}">List product</a>
+                <a class="dropdown-item" href="{{route('admin.products.create')}}">Create product</a>
+            </div>
         </li>
-
-        <!-- Dropdown -->
-{{--        <li class="nav-item dropdown">--}}
-{{--            <a class="nav-link dropdown-toggle" href="#" id="navbardrop" data-toggle="dropdown">--}}
-{{--                Dropdown link--}}
-{{--            </a>--}}
-{{--            <div class="dropdown-menu">--}}
-{{--                <a class="dropdown-item" href="#">Link 1</a>--}}
-{{--                <a class="dropdown-item" href="#">Link 2</a>--}}
-{{--                <a class="dropdown-item" href="#">Link 3</a>--}}
-{{--            </div>--}}
-{{--        </li>--}}
+        <li class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle" id="navbardrop" data-toggle="dropdown">Category</a>
+            <div class="dropdown-menu">
+                <a class="dropdown-item" href="{{route('admin.categories.index')}}">List category</a>
+                <a class="dropdown-item" href="{{route('admin.categories.create')}}">Create category</a>
+            </div>
+        </li>
     </ul>
 </nav>

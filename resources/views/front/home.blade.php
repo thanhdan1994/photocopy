@@ -46,6 +46,34 @@
     }
 </style>
 @section('content')
+    <div class="ftco-section-nopadding">
+        <div class="container">
+            <div class="block-3 d-md-flex" data-aos="fade-left">
+                <div class="image" style="background-image: url('images/image_5.jpg'); "></div>
+                <div class="text">
+                    <h4 class="subheading">Creative Title here</h4>
+                    <h2 class="heading">Far far away</h2>
+                    <p>Even the all-powerful Pointing has no control about the blind texts it is an almost unorthographic life One day however a small line of blind text by the name of Lorem Ipsum decided to leave for the far World of Grammar.</p>
+                </div>
+            </div>
+            <div class="block-3 d-md-flex" data-aos="fade-right">
+                <div class="image order-2" style="background-image: url('images/image_6.jpg'); "></div>
+                <div class="text order-1">
+                    <h4 class="subheading">Creative Title here</h4>
+                    <h2 class="heading">Far far away</h2>
+                    <p>Even the all-powerful Pointing has no control about the blind texts it is an almost unorthographic life One day however a small line of blind text by the name of Lorem Ipsum decided to leave for the far World of Grammar.</p>
+                </div>
+            </div>
+            <div class="block-3 d-md-flex" data-aos="fade-left">
+                <div class="image" style="background-image: url('images/image_7.jpg'); "></div>
+                <div class="text">
+                    <h4 class="subheading">Creative Title here</h4>
+                    <h2 class="heading">Far far away</h2>
+                    <p>Even the all-powerful Pointing has no control about the blind texts it is an almost unorthographic life One day however a small line of blind text by the name of Lorem Ipsum decided to leave for the far World of Grammar.</p>
+                </div>
+            </div>
+        </div>
+    </div>
     <div class="ftco-section bg-light">
         <div class="container">
             <div class="row">

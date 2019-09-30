@@ -7,6 +7,13 @@
 
         <div class="collapse navbar-collapse" id="ftco-nav">
             <ul class="navbar-nav ml-auto">
+                <li class="nav-item" data-toggle="modal" data-target="#modalSell">
+                    <a href="javascript:void(0)" class="nav-link">Bán máy photo</a>
+                </li>
+                <li class="nav-item" data-toggle="modal" data-target="#modalRent">
+                    <a href="javascript:void(0)" class="nav-link">Cho thuê máy photo</a>
+                </li>
+                <li class="nav-item"><a href="/may-in" class="nav-link">Máy in</a></li>
                 <li class="nav-item"><a href="/dich-vu" class="nav-link">Dịch vụ</a></li>
                 <li class="nav-item"><a href="/chia-se-tu-van" class="nav-link">Chia sẻ - tư vấn</a></li>
                 <li class="nav-item"><a href="/gioi-thieu.html" class="nav-link">Về chúng tôi</a></li>

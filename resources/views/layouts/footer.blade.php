@@ -39,3 +39,36 @@
         </div>
     </div>
 </footer>
+
+<div class="modal" id="modalSell">
+    <div class="modal-dialog modal-dialog-centered">
+        <div class="modal-content">
+            <!-- Modal body -->
+            <div class="modal-body">
+                <div class="list-group">
+                    <a class="list-group-item list-group-item-success" href="/ban-may-photo/may-photocopy-toshiba/3.html">Máy photocopy Toshiba</a>
+                    <a class="list-group-item list-group-item-success">Máy photocopy Shard </a>
+                    <a class="list-group-item list-group-item-success">Máy photocopy Canon </a>
+                    <a class="list-group-item list-group-item-success">Máy photocopy Ricoh</a>
+                    <a class="list-group-item list-group-item-success" href="/ban-may-photo">All</a>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="modal" id="modalRent">
+    <div class="modal-dialog modal-dialog-centered">
+        <div class="modal-content">
+            <!-- Modal body -->
+            <div class="modal-body">
+                <div class="list-group">
+                    <a class="list-group-item list-group-item-success">Máy photocopy Toshiba</a>
+                    <a class="list-group-item list-group-item-success" href="/ban-may-photo/may-photocopy-shard">Máy photocopy Shard </a>
+                    <a class="list-group-item list-group-item-success">Máy photocopy Canon </a>
+                    <a class="list-group-item list-group-item-success">Máy photocopy Ricoh</a>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
