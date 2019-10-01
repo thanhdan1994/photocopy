@@ -51,6 +51,7 @@ class ProductController extends Controller
             $product->body = $request->input('body');
             $product->cover = $path;
             $product->category_id = $request->input('categories');
+            $product->data = json_encode($request->data);
             if ($product->save()) {
                 return redirect()->route('admin.products.index');
             }
@@ -94,6 +95,7 @@ class ProductController extends Controller
      */
     public function update(Request $request, int $product)
     {
+        $data = array_diff($request->data, ['']);
         $product = Product::find($product);
         $product->name = $request->input('name');
         $product->price = $request->input('price');
@@ -101,6 +103,7 @@ class ProductController extends Controller
         $product->slug = Str::slug($request->input('name'), '-');
         $product->description = $request->input('description');
         $product->body = $request->input('body');
+        $product->data = json_encode($data);
         if ($request->file('cover')) {
             $path = $request->file('cover')->store('thumb', 'public_uploads');
             $product->cover = $path;

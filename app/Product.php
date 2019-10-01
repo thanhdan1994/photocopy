@@ -30,4 +30,10 @@ class Product extends Model
         }
         return $products;
     }
+
+    public function getProductById($id)
+    {
+        $product = Product::where('id', $id)->firstOrFail();
+        return $product;
+    }
 }

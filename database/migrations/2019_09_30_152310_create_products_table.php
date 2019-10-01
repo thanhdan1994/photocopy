@@ -24,6 +24,7 @@ class CreateProductsTable extends Migration
             $table->string('cover');
             $table->smallInteger('category_id');
             $table->boolean('status')->default(true);
+            $table->json('data')->nullable();
             $table->timestamps();
         });
     }

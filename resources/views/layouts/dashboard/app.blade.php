@@ -55,5 +55,15 @@
                     '/ckfinder/core/connector/php/connector.php?command=QuickUpload&type=Images&currentFolder=/cars/'
             });
         </script>
+        <script>
+            $('#add_information').on('click', function () {
+                var htmlAdd = `<div class="col-md-4">
+                                <label>Thông tin thêm:</label>
+                                <input type="text" class="form-control" name="data[]">
+                            </div>`
+                var posAdd = $('#nav-information .form-group .row');
+                posAdd.append(htmlAdd);
+            })
+        </script>
     </body>
 </html>
