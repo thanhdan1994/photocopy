@@ -51,6 +51,11 @@
                             <textarea class="form-control" rows="3" name="body" id="editor"></textarea>
                         </div>
                         <input type="file" name="cover" />
+                        <div class="form-check">
+                            <label class="form-check-label">
+                                <input type="checkbox" class="form-check-input" name="status" />Kích hoạt
+                            </label>
+                        </div>
                         <button type="submit" class="btn btn-primary">Save</button>
                 </div>
                 <div class="tab-pane fade" id="nav-information" role="tabpanel" aria-labelledby="nav-profile-tab">

@@ -33,7 +33,7 @@ class AppServiceProvider extends ServiceProvider
         }
 
         if (Schema::hasTable('categories')) {
-            $menu = Category::where('parent', 0)->get();
+            $menu = Category::where('parent', 0)->where('status', true)->get();
             View::share('menu', $menu);
         }
     }

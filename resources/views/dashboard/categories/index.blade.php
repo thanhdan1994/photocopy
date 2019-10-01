@@ -7,6 +7,7 @@
                 <th scope="col">#</th>
                 <th scope="col">Tên giới thiệu</th>
                 <th scope="col">Chuyên mục cha</th>
+                <th scope="col">Kích hoạt</th>
                 <th scope="col">Tác vụ</th>
             </tr>
             </thead>
@@ -16,6 +17,13 @@
                         <th scope="row">{{$category->id}}</th>
                         <td>{{$category->name}}</td>
                         <td>{{$category->parentCategory['name']}}</td>
+                        <td>
+                            @if($category->status)
+                                <span class="bg-success text-black">Đã kích hoạt</span>
+                            @else
+                                <span class="bg-danger text-white">Chưa kích hoạt</span>
+                            @endif
+                        </td>
                         <td>
                             <a class="btn btn-success" href="{{route('admin.categories.edit', $category->id)}}">Sửa</a>
                         </td>

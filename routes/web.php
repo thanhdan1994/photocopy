@@ -22,7 +22,15 @@ Route::get('/{slugParent}/{slugChild}/{id}.html', 'ProductController@sellByCateg
 Route::get('/{slugCategory}/chi-tiet/{slug}/pro-{id}.html', 'ProductController@show');
 
 // route admin
-Route::group(['prefix' => 'admin', 'as' => 'admin.' ], function () {
+/**
+ * Admin routes
+ */
+Route::namespace('Admin')->group(function () {
+    Route::get('admin/login', 'LoginController@showLoginForm')->name('admin.login');
+    Route::post('admin/login', 'LoginController@login')->name('admin.login');
+    Route::get('admin/logout', 'LoginController@logout')->name('admin.logout');
+});
+Route::group(['prefix' => 'admin', 'middleware' => ['employee'], 'as' => 'admin.' ], function () {
     Route::namespace('Admin')->group(function () {
         Route::get('/', 'DashboardController@index');
         Route::resources([

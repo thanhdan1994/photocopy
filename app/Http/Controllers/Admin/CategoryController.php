@@ -39,11 +39,11 @@ class CategoryController extends Controller
      */
     public function store(Request $request)
     {
-//        debug($request->all());
         $category = new Category();
         $category->name = $request->input('name');
         $category->slug = Str::slug($request->input('name'), '-');
         $category->parent = $request->categories;
+        $category->status = !empty($request->status) ? true : false;
         if ($category->save()) {
             return redirect()->route('admin.categories.index');
         }
@@ -87,6 +87,11 @@ class CategoryController extends Controller
     {
         $category = Category::find($category);
         $category->name = $request->input('name');
+        $category->slug = Str::slug($request->input('name'), '-');
+        $category->status = true;
+        if (empty($request->status)) {
+            $category->status = false;
+        }
         if ($category->save()) {
             return redirect()->route('admin.categories.index');
         }

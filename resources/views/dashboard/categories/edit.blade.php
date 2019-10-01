@@ -23,6 +23,11 @@
                     </div>
                 </div>
             </div>
+            <div class="form-check">
+                <label class="form-check-label">
+                    <input type="checkbox" class="form-check-input" name="status" @if($category->status) checked @endif />Kích hoạt
+                </label>
+            </div>
             <button type="submit" class="btn btn-primary">Save</button>
         </form>
     </div>

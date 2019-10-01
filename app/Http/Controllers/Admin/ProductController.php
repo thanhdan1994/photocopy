@@ -52,6 +52,7 @@ class ProductController extends Controller
             $product->cover = $path;
             $product->category_id = $request->input('categories');
             $product->data = json_encode($request->data);
+            $product->status = !empty($request->status) ? true : false;
             if ($product->save()) {
                 return redirect()->route('admin.products.index');
             }
@@ -98,12 +99,17 @@ class ProductController extends Controller
         $data = array_diff($request->data, ['']);
         $product = Product::find($product);
         $product->name = $request->input('name');
+        $product->slug = Str::slug($request->input('name'), '-');
         $product->price = $request->input('price');
         $product->measure = $request->input('measure');
         $product->slug = Str::slug($request->input('name'), '-');
         $product->description = $request->input('description');
         $product->body = $request->input('body');
         $product->data = json_encode($data);
+        $product->status = true;
+        if (empty($request->status)) {
+            $product->status = false;
+        }
         if ($request->file('cover')) {
             $path = $request->file('cover')->store('thumb', 'public_uploads');
             $product->cover = $path;
