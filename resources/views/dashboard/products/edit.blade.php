@@ -68,6 +68,9 @@
                         <label class="form-check-label">
                             <input type="checkbox" class="form-check-input" name="status" @if($product->status) checked @endif />Kích hoạt
                         </label>
+                        <label class="form-check-label ml-5">
+                            <input type="checkbox" class="form-check-input" name="prior" @if($product->prior) checked @endif />Nổi bật
+                        </label>
                     </div>
                     <button type="submit" class="btn btn-primary">Save</button>
                 </div>

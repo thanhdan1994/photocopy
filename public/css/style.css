@@ -7627,9 +7627,10 @@ textarea.form-control {
 
 #section-offer {
   padding: 12em 0; }
-
-.ftco-section {
-  padding: 7em 0; }
+@media (min-width: 993px) {
+    .ftco-section {
+        padding: 7em 0; }
+}
 
 .ftco-bg-dark {
   background: #3c312e; }
@@ -8363,7 +8364,7 @@ textarea.form-control {
     color: #a3c2d1; }
   .block-3 .text .heading {
     font-size: 30px;
-    margin-bottom: 30px; }
+  }
   .block-3 .text p:last-child {
     margin-bottom: 0; }
 
@@ -8657,6 +8658,9 @@ textarea.form-control {
     margin: 10px 0;
     font-size: 16px;
     color: #009600;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+    overflow: hidden
 }
 .module-product-item .price {
     float: left;
@@ -8697,4 +8701,26 @@ textarea.form-control {
 .block-img-fluid img{
     max-width: 100%;
     height: auto;
+}
+
+.price-detail {
+    font-size: 1.3em;
+}
+
+.price-detail span {
+    color: #00a65a;
+}
+
+h1, h4.title-by-category {
+    margin: 0 25px;
+    padding: 0 15px;
+    font-weight: bold;
+    font-size: 2em;
+    text-align: center;
+}
+
+@media (max-width: 991px) {
+    h1, h4.title-by-category {
+        font-size: 1.5em;
+    }
 }

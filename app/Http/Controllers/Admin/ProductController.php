@@ -17,7 +17,7 @@ class ProductController extends Controller
      */
     public function index()
     {
-        $products = Product::all();
+        $products = Product::orderBy('created_at', 'desc')->paginate(5);
         return view('dashboard.products.index', compact('products'));
     }
 
@@ -41,6 +41,7 @@ class ProductController extends Controller
     public function store(Request $request)
     {
         if ($request->file('cover')) {
+            $data = array_diff($request->data, ['']);
             $path = $request->file('cover')->store('thumb', 'public_uploads');
             $product = new Product();
             $product->name = $request->input('name');
@@ -51,8 +52,9 @@ class ProductController extends Controller
             $product->body = $request->input('body');
             $product->cover = $path;
             $product->category_id = $request->input('categories');
-            $product->data = json_encode($request->data);
+            $product->data = json_encode($data);
             $product->status = !empty($request->status) ? true : false;
+            $product->prior = !empty($request->prior) ? true : false;
             if ($product->save()) {
                 return redirect()->route('admin.products.index');
             }
@@ -107,8 +109,12 @@ class ProductController extends Controller
         $product->body = $request->input('body');
         $product->data = json_encode($data);
         $product->status = true;
+        $product->prior = true;
         if (empty($request->status)) {
             $product->status = false;
+        }
+        if (empty($request->prior)) {
+            $product->prior = false;
         }
         if ($request->file('cover')) {
             $path = $request->file('cover')->store('thumb', 'public_uploads');

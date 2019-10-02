@@ -31,5 +31,6 @@
                 @endforeach
             </tbody>
         </table>
+        {{ $categories->appends(['sort' => 'name'])->links() }}
     </div>
 @endsection

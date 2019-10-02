@@ -24,5 +24,6 @@
             @endforeach
             </tbody>
         </table>
+        {{ $introduces->appends(['sort' => 'name'])->links() }}
     </div>
 @endsection

@@ -26,5 +26,6 @@
                 @endforeach
             </tbody>
         </table>
+        {{ $services->appends(['sort' => 'name'])->links() }}
     </div>
 @endsection

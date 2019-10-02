@@ -55,6 +55,9 @@
                             <label class="form-check-label">
                                 <input type="checkbox" class="form-check-input" name="status" />Kích hoạt
                             </label>
+                            <label class="form-check-label ml-5">
+                                <input type="checkbox" class="form-check-input" name="prior" />Nổi bật
+                            </label>
                         </div>
                         <button type="submit" class="btn btn-primary">Save</button>
                 </div>

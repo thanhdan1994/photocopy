@@ -15,7 +15,6 @@
                 <li class="nav-item"><a href="/may-in" class="nav-link">Máy in</a></li>
                 <li class="nav-item"><a href="/dich-vu" class="nav-link">Dịch vụ</a></li>
                 <li class="nav-item"><a href="/chia-se-tu-van" class="nav-link">Chia sẻ - tư vấn</a></li>
-                <li class="nav-item"><a href="/gioi-thieu.html" class="nav-link">Về chúng tôi</a></li>
             </ul>
         </div>
     </div>

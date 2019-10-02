@@ -15,7 +15,7 @@ class IntroduceController extends Controller
      */
     public function index()
     {
-        $introduces = Introduce::all();
+        $introduces = Introduce::orderBy('created_at', 'desc')->paginate(5);
         return view('dashboard.introduces.index', compact('introduces'));
     }
 

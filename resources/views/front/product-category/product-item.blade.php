@@ -9,7 +9,7 @@
         <div class="description">
             <ul>
                 @foreach(json_decode($product->data) as $key => $item)
-                    <li><strong>{{$item}}</strong></li>
+                    @if($key < 5) <li><strong>{{$item}}</strong></li> @endif
                 @endforeach
             </ul>
         </div>

@@ -45,14 +45,15 @@
     <div class="modal-dialog modal-dialog-centered">
         <div class="modal-content">
             <!-- Modal body -->
-            <div class="modal-body">
-                <div class="list-group">
-                    @foreach($item->children as $key => $itemChild)
-                    <a class="list-group-item list-group-item-success" href="/{{$item->slug}}/{{$itemChild->slug}}/{{$itemChild->id}}.html">
-                        {{$itemChild->name}}
-                    </a>
-                    @endforeach
-                </div>
+            <div class="list-group">
+                @foreach($item->children as $key => $itemChild)
+                <a class="list-group-item list-group-item-light" href="/{{$item->slug}}/{{$itemChild->slug}}/{{$itemChild->id}}.html">
+                    {{$itemChild->name}}
+                </a>
+                @endforeach
+                <a class="list-group-item list-group-item-light" href="/{{$item->slug}}/{{$item->id}}.html">
+                    Tất cả
+                </a>
             </div>
         </div>
     </div>

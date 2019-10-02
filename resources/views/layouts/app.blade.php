@@ -14,6 +14,7 @@
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <title>@yield('title')</title>
+        <link rel="shortcut icon" href="/favicon.ico" type="image/x-icon" />
         <link href="https://fonts.googleapis.com/css?family=Rubik:300,400,500" rel="stylesheet">
         <link rel="stylesheet" href={{asset("css/open-iconic-bootstrap.min.css")}}>
         <link rel="stylesheet" href={{asset("css/animate.css")}}>

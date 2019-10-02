@@ -1,14 +1,17 @@
 @extends('layouts.app')
-
-@section('title', $product->name)
-@section('og')
-    <meta property="og:type" content="product"/>
-    <meta property="og:title" content="{{ $product->name }}"/>
-    <meta property="og:description" content="{{ strip_tags($product->description) }}"/>
-    @if(!is_null($product->cover))
-        <meta property="og:image" content="{{ asset("uploads/$product->cover") }}"/>
-    @endif
-@endsection
+    @section('title', $product->name)
+    @section('og')
+        <meta property="og:type" content="product"/>
+        <meta property="og:title" content="{{ $product->name }}"/>
+        <meta property="og:description" content="{{ strip_tags($product->description) }}"/>
+        @if(!is_null($product->cover))
+            <meta property="og:image" content="{{ asset("uploads/$product->cover") }}"/>
+        @endif
+    @endsection
+@php
+    $category = $product->category;
+    $categoryRoot = $category->parentCategory;
+@endphp
 @section('jsonLd')
     <script type="application/ld+json">
         {
@@ -22,13 +25,13 @@
           },{
             "@type": "ListItem",
             "position": 3,
-            "name": "<?=$product->category['name'] ?>",
-            "item": "<?= env('APP_URL') . '/' . $product->category->parentCategory['slug'] . '/' . $product->category['slug'] . '/' .$product->category['id']. '.html'?>"
+            "name": "<?=$category['name'] ?>",
+            "item": "<?= env('APP_URL') . '/' . $categoryRoot['slug'] . '/' . $category['slug'] . '/' .$category['id']. '.html'?>"
           },{
             "@type": "ListItem",
             "position": 2,
-            "name": "<?=$product->category->parentCategory['name']?>",
-            "item": "<?= env('APP_URL') . '/' . $product->category->parentCategory['slug'] . '.html' ?>"
+            "name": "<?=$categoryRoot['name']?>",
+            "item": "<?= env('APP_URL') . '/' . $categoryRoot['slug'] . '/' .$categoryRoot['id'] . '.html' ?>"
           },{
             "@type": "ListItem",
             "position": 1,
@@ -61,14 +64,33 @@
 @endsection
 @section('content')
     <div class="ftco-section">
+        <nav aria-label="breadcrumb">
+            <ol class="breadcrumb">
+                <li class="breadcrumb-item"><a href="{{env('APP_URL')}}">Trang chủ</a></li>
+                <li class="breadcrumb-item">
+                    <a href="{{env('APP_URL') . '/' . $categoryRoot['slug']. '/' .$categoryRoot['id'].'.html'}}">
+                        {{$categoryRoot['name']}}
+                    </a>
+                </li>
+                <li class="breadcrumb-item">
+                    <a href="{{env('APP_URL') . '/' . $categoryRoot['slug'] . '/' . $category['slug'] . '/' .$category['id']. '.html'}}">
+                        {{$category['name']}}
+                    </a>
+                </li>
+                <li class="breadcrumb-item active" aria-current="page">
+                    {{$product->name}}
+                </li>
+            </ol>
+        </nav>
         <div class="container">
             <div class="block-3 d-md-flex" data-aos="fade-left">
                 <div class="image" style="background-image: url({{asset('uploads/'.$product->cover)}}); "></div>
                 <div class="text">
                     <h2 class="heading">{{$product->name}}</h2>
+                    <span class="price-detail">Giá: <span>{{number_format($product->price, 0, ',', '.')}} VNĐ / {{$product->measure}}</span></span>
                     <ul>
                         @foreach(json_decode($product->data) as $key => $item)
-                        <li>{{$item}}</li>
+                            <li>{{$item}}</li>
                         @endforeach
                     </ul>
                 </div>
@@ -76,14 +98,6 @@
             <div class="row">
                 <div class="col-md-8 block-img-fluid">
                     {!! regexContent($product->body) !!}
-                    <div class="tag-widget post-tag-container mb-5 mt-5">
-                        <div class="tagcloud">
-                            <a href="#" class="tag-cloud-link">Life</a>
-                            <a href="#" class="tag-cloud-link">Sport</a>
-                            <a href="#" class="tag-cloud-link">Tech</a>
-                            <a href="#" class="tag-cloud-link">Travel</a>
-                        </div>
-                    </div>
                 </div> <!-- .col-md-8 -->
                 <div class="col-md-4 sidebar">
                     <div class="sidebar-box">
