@@ -9,6 +9,10 @@
                 <input type="text" class="form-control" name="name" required>
             </div>
             <div class="form-group">
+                <label>Mô tả:</label>
+                <textarea class="form-control" rows="3" name="excerpt"></textarea>
+            </div>
+            <div class="form-group">
                 <label>Bài viết:</label>
                 <textarea class="form-control" rows="5" name="description" id="editor"></textarea>
             </div>

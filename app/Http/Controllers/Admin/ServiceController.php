@@ -44,6 +44,7 @@ class ServiceController extends Controller
             $services->name = $request->input('name');
             $services->slug = Str::slug($request->input('name'), '-');
             $services->description = $request->input('description');
+            $services->excerpt = $request->input('excerpt');
             $services->cover = $path;
             $services->type = !empty($request->input('type')) ? 1 : 0;
             if ($services->save()) {
@@ -93,6 +94,7 @@ class ServiceController extends Controller
         $service->name = $request->input('name');
         $service->slug = Str::slug($request->input('name'), '-');
         $service->description = $request->input('description');
+        $service->excerpt = $request->input('excerpt');
         $service->type = !empty($request->input('type')) ? 1 : 0;
         if ($request->file('photo')) {
             $path = $request->file('photo')->store('thumb', 'public_uploads');

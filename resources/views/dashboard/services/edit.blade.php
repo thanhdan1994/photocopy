@@ -10,6 +10,10 @@
                 <input type="text" class="form-control" name="name" value="{{$service->name}}" required>
             </div>
             <div class="form-group">
+                <label>Mô tả:</label>
+                <textarea class="form-control" rows="3" name="excerpt" required>{{$service->excerpt}}</textarea>
+            </div>
+            <div class="form-group">
                 <label>Bài viết:</label>
                 <textarea class="form-control" rows="3" name="description" id="editor">{!! $service->description  !!}</textarea>
             </div>

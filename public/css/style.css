@@ -8711,7 +8711,7 @@ textarea.form-control {
     color: #00a65a;
 }
 
-h1, h4.title-by-category {
+h1.title-by-category, h4.title-by-category {
     margin: 0 25px;
     padding: 0 15px;
     font-weight: bold;
@@ -8720,7 +8720,7 @@ h1, h4.title-by-category {
 }
 
 @media (max-width: 991px) {
-    h1, h4.title-by-category {
+    h1.title-by-category, h4.title-by-category {
         font-size: 1.5em;
     }
 }

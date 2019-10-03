@@ -1,5 +1,7 @@
 @extends('layouts.app')
-
+@section('og')
+    <meta name="description" content="{{ $post->excerpt }}"/>
+@endsection
 @section('content')
     <div class="ftco-section">
         <div class="container">

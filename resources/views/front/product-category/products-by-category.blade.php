@@ -1,7 +1,7 @@
 @extends('layouts.app')
 @section('title', $category['name'])
 @section('og')
-    <meta property="description" content="{{ strip_tags($category['name']) }}"/>
+    <meta name="description" content="{{ strip_tags($category['name']) }}"/>
 @endsection
 @section('jsonLd')
     @if(!empty($category->parentCategory))

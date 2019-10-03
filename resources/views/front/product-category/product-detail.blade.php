@@ -1,7 +1,7 @@
 @extends('layouts.app')
     @section('title', $product->name)
     @section('og')
-        <meta property="description" content="{{ strip_tags($product->description) }}"/>
+        <meta name="description" content="{{ strip_tags($product->description) }}"/>
         <meta property="og:type" content="product"/>
         <meta property="og:title" content="{{ $product->name }}"/>
         <meta property="og:description" content="{{ strip_tags($product->description) }}"/>
@@ -87,7 +87,7 @@
             <div class="block-3 d-md-flex" data-aos="fade-left">
                 <div class="image" style="background-image: url({{asset('uploads/'.$product->cover)}}); "></div>
                 <div class="text">
-                    <h2 class="heading">{{$product->name}}</h2>
+                    <h1 class="heading">{{$product->name}}</h1>
                     <span class="price-detail">Giá: <span>{{number_format($product->price, 0, ',', '.')}} VNĐ / {{$product->measure}}</span></span>
                     <ul>
                         @foreach(json_decode($product->data) as $key => $item)

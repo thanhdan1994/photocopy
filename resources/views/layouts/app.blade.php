@@ -15,7 +15,7 @@
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <title>@yield('title')</title>
         <link rel="shortcut icon" href="/favicon.ico" type="image/x-icon" />
-{{--        <link rel="stylesheet" href={{asset("css/open-iconic-bootstrap.min.css")}}>--}}
+        <link rel="stylesheet" href={{asset("css/open-iconic-bootstrap.min.css")}}>
 {{--        <link rel="stylesheet" href={{asset("css/animate.css")}}>--}}
 {{--        <link rel="stylesheet" href={{asset("css/owl.carousel.min.css")}}>--}}
 {{--        <link rel="stylesheet" href={{asset("css/owl.theme.default.min.css")}}>--}}
@@ -26,8 +26,8 @@
 {{--        <link rel="stylesheet" href={{asset("css/jquery.timepicker.css")}}>--}}
 {{--        <link rel="stylesheet" href={{asset("css/flaticon.css")}}>--}}
 {{--        <link rel="stylesheet" href={{asset("css/icomoon.css")}}>--}}
-{{--        <link rel="stylesheet" href={{asset("css/style.css")}}>--}}
-        <link rel="stylesheet" href="{{asset('css/bundle.min.css')}}">
+        <link rel="stylesheet" href={{asset("css/style.css")}}>
+{{--        <link rel="stylesheet" href="{{asset('css/bundle.min.css')}}">--}}
         @yield('css')
         <meta name="theme-color" content="#ffffff">
         <meta property="og:url" content="{{ request()->url() }}"/>
