@@ -1,6 +1,9 @@
 @extends('layouts.app')
 
 @section('title', 'Cho thuê máy in, bán máy in, sữa chữa máy in nhanh chóng giá rẻ tại Tp.HCM')
+@section('og')
+    <meta name="description" content="Chí Vinh là công ty hàng đầu về lĩnh vực máy photocopy, hiện công ty đang phân phối các dòng máy photocopy Ricoh với giá tốt, kèm theo các dịch vụ cho thuê máy photocopy uy tín, chất lượng." />
+@endsection
 @section('section')
     <section class="ftco-cover" style="background-image: url(https://haiminhco.com.vn/wp-content/uploads/2016/09/may-photocopy-ricoh-aficio-mp-9002.jpg);" id="section-home" data-aos="fade"  data-stellar-background-ratio="0.5">
         <div class="container">

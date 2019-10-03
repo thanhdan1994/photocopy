@@ -4,7 +4,7 @@
     <div class="ftco-section">
         <div class="container">
             <div class="row">
-                <div class="col-md-12">
+                <div class="col-md-12 block-img-fluid">
                     <div class="maincontent">
                         {!!regexContent($post->description)!!}
                     </div>
