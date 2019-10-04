@@ -1,8 +1,8 @@
-<nav class="navbar navbar-expand-lg navbar-dark ftco_navbar bg-success ftco-navbar-light" id="ftco-navbar" data-aos="fade-down" data-aos-delay="500">
+<nav class="navbar navbar-expand-lg navbar-light ftco_navbar bg-success ftco-navbar-light" id="ftco-navbar" data-aos="fade-down" data-aos-delay="500">
     <div class="container">
         <a class="navbar-brand" href="/">Logo</a>
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#ftco-nav" aria-controls="ftco-nav" aria-expanded="false" aria-label="Toggle navigation">
-            <span class="oi oi-menu"></span>
+            <span class="navbar-toggler-icon"></span>
         </button>
 
         <div class="collapse navbar-collapse" id="ftco-nav">

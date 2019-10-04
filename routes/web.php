@@ -1,5 +1,9 @@
 <?php
 
+use App\Category;
+use Spatie\Sitemap\SitemapGenerator;
+use Spatie\Sitemap\Tags\Url;
+use Carbon\Carbon;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -39,5 +43,47 @@ Route::group(['prefix' => 'admin', 'middleware' => ['employee'], 'as' => 'admin.
             'products' => 'ProductController',
             'categories' => 'CategoryController'
         ]);
+        Route::get('/create-sitemap', function () {
+            $sitemap = SitemapGenerator::create(env('APP_URL'))
+                ->getSitemap()
+                ->add(Url::create('/')
+                    ->setLastModificationDate(Carbon::yesterday())
+                    ->setChangeFrequency(Url::CHANGE_FREQUENCY_MONTHLY)
+                    ->setPriority(0.1));
+            $menu = Category::where('status', true)->get();
+            foreach ($menu as $key => $item) {
+                $url = env('APP_URL') . '/' . $item->slug . '/' . $item->id . '.html';
+                if ($item->parent) {
+                    $url = env('APP_URL') . '/' . $item->parentCategory['slug'] . '/' . $item->slug . '/' . $item->id . '.html';
+                }
+                $sitemap->add(Url::create($url)
+                    ->setLastModificationDate(Carbon::yesterday())
+                    ->setChangeFrequency(Url::CHANGE_FREQUENCY_MONTHLY)
+                    ->setPriority(0.1));
+            }
+
+            $services = \App\Service::all();
+            foreach ($services as $key => $item) {
+                $url = env('APP_URL') . '/dich-vu/' . $item->slug . '.html';
+                if (!$item->type) {
+                    $url = env('APP_URL') . '/chia-se-tu-van/' . $item->slug . '.html';
+                }
+                $sitemap->add(Url::create($url)
+                    ->setLastModificationDate(Carbon::yesterday())
+                    ->setChangeFrequency(Url::CHANGE_FREQUENCY_MONTHLY)
+                    ->setPriority(0.1));
+            }
+            $products = \App\Product::where('status', 1)->get();
+            foreach ($products as $key => $item) {
+                $url = env('APP_URL') . '/' . $item->category['slug'] . '/chi-tiet/' . $item['slug'] . '/pro-' . $item->id . '.html';
+                $sitemap->add(Url::create($url)
+                    ->setLastModificationDate(Carbon::yesterday())
+                    ->setChangeFrequency(Url::CHANGE_FREQUENCY_MONTHLY)
+                    ->setPriority(0.1));
+            }
+
+
+            $sitemap->writeToFile(public_path('sitemap.xml'));
+        });
     });
 });
