@@ -85,5 +85,63 @@ Route::group(['prefix' => 'admin', 'middleware' => ['employee'], 'as' => 'admin.
 
             $sitemap->writeToFile(public_path('sitemap.xml'));
         });
+        Route::get('/request-api-indexing', function () {
+            $status_codeArr = [];
+            $client = new Google_Client();
+
+            // service_account_file.json is the private key that you created for your service account.
+            $client->setAuthConfig('api-indexing-254907-afa13f3f1f66.json');
+            $client->addScope('https://www.googleapis.com/auth/indexing');
+
+            // Get a Guzzle HTTP Client
+            $httpClient = $client->authorize();
+            $endpoint = 'https://indexing.googleapis.com/v3/urlNotifications:publish';
+
+            $menu = Category::where('status', true)->get();
+            foreach ($menu as $key => $item) {
+                $url = env('APP_URL') . '/' . $item->slug . '/' . $item->id . '.html';
+                if ($item->parent) {
+                    $url = env('APP_URL') . '/' . $item->parentCategory['slug'] . '/' . $item->slug . '/' . $item->id . '.html';
+                }
+                // Define contents here. The structure of the content is described in the next step.
+                $content = "{
+                  \"url\": \"$url\",
+                  \"type\": \"URL_UPDATED\"
+                }";
+                $response = $httpClient->post($endpoint, [ 'body' => $content ]);
+                $status_code = $response->getStatusCode();
+                array_push($status_codeArr, $status_code);
+            }
+
+            $services = \App\Service::all();
+            foreach ($services as $key => $item) {
+                $url = env('APP_URL') . '/dich-vu/' . $item->slug . '.html';
+                if (!$item->type) {
+                    $url = env('APP_URL') . '/chia-se-tu-van/' . $item->slug . '.html';
+                }
+                // Define contents here. The structure of the content is described in the next step.
+                $content = "{
+                  \"url\": \"$url\",
+                  \"type\": \"URL_UPDATED\"
+                }";
+                $response = $httpClient->post($endpoint, [ 'body' => $content ]);
+                $status_code = $response->getStatusCode();
+                array_push($status_codeArr, $status_code);
+            }
+
+            $products = \App\Product::where('status', 1)->get();
+            foreach ($products as $key => $item) {
+                $url = env('APP_URL') . '/' . $item->category['slug'] . '/chi-tiet/' . $item['slug'] . '/pro-' . $item->id . '.html';
+                // Define contents here. The structure of the content is described in the next step.
+                $content = "{
+                  \"url\": \"$url\",
+                  \"type\": \"URL_UPDATED\"
+                }";
+                $response = $httpClient->post($endpoint, [ 'body' => $content ]);
+                $status_code = $response->getStatusCode();
+                array_push($status_codeArr, $status_code);
+            }
+            return $status_codeArr;
+        });
     });
 });

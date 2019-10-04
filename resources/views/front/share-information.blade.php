@@ -1,5 +1,8 @@
 @extends('layouts.app')
-
+@section('title', 'Kinh nghiệm xử lý sự cố máy in, máy photocopy, bom mực, nạp mực máy in')
+@section('og')
+    <meta name="description" content="Kinh nghiệm xử lý sự cố máy in, máy photocopy, bom mực, nạp mực máy in" />
+@endsection
 @section('section')
     <section class="ftco-cover" style="background-image: url(https://haiminhco.com.vn/wp-content/uploads/2016/09/may-photocopy-ricoh-aficio-mp-9002.jpg);" id="section-home" data-aos="fade"  data-stellar-background-ratio="0.5">
         <div class="container">

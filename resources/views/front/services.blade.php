@@ -1,4 +1,8 @@
 @extends('layouts.app')
+@section('title', 'Dịch vụ sữa chữa máy photocopy, cho thuê cho máy photocopy, bán máy photocopy giá rẻ nhanh chóng')
+@section('og')
+    <meta name="description" content="Dịch vụ sữa chữa máy photocopy, cho thuê cho máy photocopy, bán máy photocopy giá rẻ nhanh chóng" />
+@endsection
 @section('content')
 <div class="ftco-section">
     <div class="container">
