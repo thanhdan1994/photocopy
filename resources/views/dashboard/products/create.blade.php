@@ -2,6 +2,16 @@
 
 @section('content')
     <div class="container-fluid p-5">
+        <h1>Thêm sản phẩm</h1>
+        @if ($errors->any())
+            <div class="alert alert-danger">
+                <ul>
+                    @foreach ($errors->all() as $error)
+                        <li>{{ $error }}</li>
+                    @endforeach
+                </ul>
+            </div>
+        @endif
         <nav>
             <div class="nav nav-tabs" id="nav-tab" role="tablist">
                 <a class="nav-item nav-link active" id="nav-home-tab" data-toggle="tab" href="#nav-home" role="tab" aria-controls="nav-home" aria-selected="true">Chính</a>
@@ -16,39 +26,53 @@
                             <div class="row">
                                 <div class="col-md-4">
                                     <label>Tên sản phẩm:</label>
-                                    <input type="text" class="form-control" name="name" required>
+                                    <input type="text" class="form-control" name="name" value="{{ old('name') }}">
                                 </div>
                                 <div class="col-md-4">
                                     <label>Giá sản phẩm:</label>
-                                    <input type="number" class="form-control" name="price">
+                                    <input type="number" class="form-control" name="price" value="{{ old('price') }}">
                                 </div>
                                 <div class="col-md-4">
                                     <label>Đơn vị tính:</label>
-                                    <input type="text" class="form-control" name="measure">
+                                    <input type="text" class="form-control" name="measure" value="{{ old('measure') }}">
                                 </div>
                             </div>
                         </div>
                         <div class="form-group">
                             <label>Mô tả sản phẩm:</label>
-                            <textarea class="form-control" rows="3" name="description"></textarea>
+                            <textarea class="form-control" rows="3" name="description">{{ old('description') }}</textarea>
                         </div>
                         <div class="form-group">
                             <label>Chọn chuyên mục:</label>
-                            <div class="input-group mb-3">
-                                <select class="custom-select" name="categories">
-                                    <option disabled selected>-- Chọn một chuyện mục --</option>
-                                    @foreach($categories as $key => $category)
-                                        <option disabled>-{{$category->name}}</option>
-                                        @foreach($category->children as $key => $item)
-                                            <option value="{{$item['id']}}">{{$item['name']}}</option>
+                            @if(empty(old('categories')))
+                                <div class="input-group mb-3">
+                                    <select class="custom-select" name="categories">
+                                        <option disabled selected>-- Chọn một chuyện mục --</option>
+                                        @foreach($categories as $key => $category)
+                                            <option disabled>-{{$category->name}}</option>
+                                            @foreach($category->children as $key => $item)
+                                                <option value="{{$item['id']}}">{{$item['name']}}</option>
+                                            @endforeach
                                         @endforeach
-                                    @endforeach
-                                </select>
-                            </div>
+                                    </select>
+                                </div>
+                            @else
+                                <div class="input-group mb-3">
+                                    <select class="custom-select" name="categories">
+                                        <option disabled>-- Chọn một chuyện mục --</option>
+                                        @foreach($categories as $key => $category)
+                                            <option disabled>-{{$category->name}}</option>
+                                            @foreach($category->children as $key => $item)
+                                                <option value="{{$item['id']}}" @if($item['id'] == old('categories')) selected @endif>{{$item['name']}}</option>
+                                            @endforeach
+                                        @endforeach
+                                    </select>
+                                </div>
+                            @endif
                         </div>
                         <div class="form-group">
                             <label>Công nghệ sản phẩm (tạo kiểu bảng):</label>
-                            <textarea class="form-control" rows="3" name="body" id="editor"></textarea>
+                            <textarea class="form-control" rows="3" name="body" id="editor" >{{ old('body') }}</textarea>
                         </div>
                         <input type="file" name="cover" />
                         <div class="form-check">

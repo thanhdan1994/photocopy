@@ -1,6 +1,6 @@
 @extends('layouts.app')
 @section('title', 'Kinh nghiệm xử lý sự cố máy in, máy photocopy, bom mực, nạp mực máy in')
-@section('og')
+@section('metaName')
     <meta name="description" content="Kinh nghiệm xử lý sự cố máy in, máy photocopy, bom mực, nạp mực máy in" />
 @endsection
 @section('section')

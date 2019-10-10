@@ -89,6 +89,7 @@ class CategoryController extends Controller
         $category->name = $request->input('name');
         $category->slug = Str::slug($request->input('name'), '-');
         $category->status = true;
+        $category->parent = $request->categories;
         if (empty($request->status)) {
             $category->status = false;
         }

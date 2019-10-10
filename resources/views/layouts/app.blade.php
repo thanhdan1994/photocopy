@@ -30,8 +30,7 @@
         <link rel="stylesheet" href="{{asset('css/bundle.min.css')}}">
         @yield('css')
         <meta name="theme-color" content="#ffffff">
-        <meta property="og:url" content="{{ request()->url() }}"/>
-        @yield('og')
+        @yield('metaName')
         @yield('jsonLd')
     </head>
     <body>
@@ -42,6 +41,30 @@
         @yield('content')
         @include('layouts.footer')
         <script src={{asset("js/bundle.min.js")}}></script>
+        <script>
+            document.addEventListener("DOMContentLoaded", function() {
+                var lazyImages = [].slice.call(document.querySelectorAll("img.lazy"));
+
+                if ("IntersectionObserver" in window) {
+                    let lazyImageObserver = new IntersectionObserver(function(entries, observer) {
+                        entries.forEach(function(entry) {
+                            if (entry.isIntersecting) {
+                                let lazyImage = entry.target;
+                                lazyImage.src = lazyImage.dataset.src;
+                                lazyImage.classList.remove("lazy");
+                                lazyImageObserver.unobserve(lazyImage);
+                            }
+                        });
+                    });
+
+                    lazyImages.forEach(function(lazyImage) {
+                        lazyImageObserver.observe(lazyImage);
+                    });
+                } else {
+                    // Possibly fall back to a more compatible method here
+                }
+            });
+        </script>
 {{--        <script src={{asset("js/jquery.min.js")}}></script>--}}
 {{--        <script src={{asset("js/jquery-migrate-3.0.1.min.js")}}></script>--}}
 {{--        <script src={{asset("js/popper.min.js")}}></script>--}}

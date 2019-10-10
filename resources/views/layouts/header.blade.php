@@ -12,7 +12,6 @@
                         <a href="javascript:void(0)" class="nav-link">{{$item->name}}</a>
                     </li>
                 @endforeach
-                <li class="nav-item"><a href="/may-in" class="nav-link">Máy in</a></li>
                 <li class="nav-item"><a href="/dich-vu" class="nav-link">Dịch vụ</a></li>
                 <li class="nav-item"><a href="/chia-se-tu-van" class="nav-link">Chia sẻ - tư vấn</a></li>
             </ul>

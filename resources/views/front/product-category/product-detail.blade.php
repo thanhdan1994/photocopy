@@ -1,6 +1,6 @@
 @extends('layouts.app')
     @section('title', $product->name)
-    @section('og')
+    @section('metaName')
         <meta name="description" content="{{ strip_tags($product->description) }}"/>
         <meta property="og:type" content="product"/>
         <meta property="og:title" content="{{ $product->name }}"/>

@@ -5,24 +5,24 @@
     <!-- Links -->
     <ul class="navbar-nav">
         <li class="nav-item dropdown">
-            <a class="nav-link dropdown-toggle" id="navbardrop" data-toggle="dropdown">Quản lý dịch vụ</a>
+            <a class="nav-link dropdown-toggle" id="navbardrop" data-toggle="dropdown">Dịch vụ</a>
             <div class="dropdown-menu">
                 <a class="dropdown-item" href="{{route('admin.services.index')}}">Danh sách dịch vụ</a>
                 <a class="dropdown-item" href="{{route('admin.services.create')}}">Thêm dịch vụ mới</a>
             </div>
         </li>
         <li class="nav-item dropdown">
-            <a class="nav-link dropdown-toggle" id="navbardrop" data-toggle="dropdown">Quản lý sản phẩm</a>
+            <a class="nav-link dropdown-toggle" id="navbardrop" data-toggle="dropdown">Sản phẩm</a>
             <div class="dropdown-menu">
-                <a class="dropdown-item" href="{{route('admin.products.index')}}">List product</a>
-                <a class="dropdown-item" href="{{route('admin.products.create')}}">Create product</a>
+                <a class="dropdown-item" href="{{route('admin.products.index')}}">Danh sách sản phẩm</a>
+                <a class="dropdown-item" href="{{route('admin.products.create')}}">Thêm sản phẩm khác</a>
             </div>
         </li>
         <li class="nav-item dropdown">
-            <a class="nav-link dropdown-toggle" id="navbardrop" data-toggle="dropdown">Category</a>
+            <a class="nav-link dropdown-toggle" id="navbardrop" data-toggle="dropdown">Chuyên mục</a>
             <div class="dropdown-menu">
-                <a class="dropdown-item" href="{{route('admin.categories.index')}}">List category</a>
-                <a class="dropdown-item" href="{{route('admin.categories.create')}}">Create category</a>
+                <a class="dropdown-item" href="{{route('admin.categories.index')}}">Danh sách chuyên mục</a>
+                <a class="dropdown-item" href="{{route('admin.categories.create')}}">Thêm chuyên mục mới</a>
             </div>
         </li>
     </ul>

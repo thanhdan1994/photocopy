@@ -1,6 +1,6 @@
 @extends('layouts.app')
 @section('title', $post->name)
-@section('og')
+@section('metaName')
     <meta name="description" content="{{ $post->excerpt }}"/>
 @endsection
 @section('content')

@@ -1,6 +1,6 @@
 @extends('layouts.app')
 @section('title', $category['name'])
-@section('og')
+@section('metaName')
     <meta name="description" content="{{ strip_tags($category['name']) }}"/>
 @endsection
 @section('jsonLd')

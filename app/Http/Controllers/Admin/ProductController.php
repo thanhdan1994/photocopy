@@ -7,6 +7,7 @@ use App\Http\Controllers\Controller;
 use Illuminate\Support\Str;
 use App\Product;
 use Illuminate\Http\Request;
+use App\Requests\CreateProductRequest;
 
 class ProductController extends Controller
 {
@@ -38,7 +39,7 @@ class ProductController extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(Request $request)
+    public function store(CreateProductRequest $request)
     {
         if ($request->file('cover')) {
             $data = array_diff($request->data, ['']);
