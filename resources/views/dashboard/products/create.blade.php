@@ -83,6 +83,10 @@
                                 <input type="checkbox" class="form-check-input" name="prior" />Nổi bật
                             </label>
                         </div>
+                        <div class="form-group">
+                            <label>Ảnh chi tiết:</label>
+                            <input type="file" name="images[]" multiple/>
+                        </div>
                         <button type="submit" class="btn btn-primary">Save</button>
                 </div>
                 <div class="tab-pane fade" id="nav-information" role="tabpanel" aria-labelledby="nav-profile-tab">

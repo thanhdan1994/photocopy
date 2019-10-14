@@ -9,6 +9,7 @@ class Product extends Model
     const DEFAULT_PAGE = 1;
     const DEFAULT_NUMBER = 10;
     const IS_ACTIVE = 1;
+    const FOLDER_DETAIL_IMAGES = 'uploads/images/';
     /**
      * Get the category that owns the product.
      */
@@ -96,6 +97,14 @@ class Product extends Model
             ->whereIn('category_id', $ids)
             ->offset($offset)->take($number)
             ->orderBy($orderBy, 'DESC')->get();
+        return $products;
+    }
+
+    public function searchProduct(string $string)
+    {
+        $products = Product::where('status', self::IS_ACTIVE)
+            ->where('name', 'like', "%". $string . "%")
+            ->orderBy('updated_at', 'DESC')->get();
         return $products;
     }
 }

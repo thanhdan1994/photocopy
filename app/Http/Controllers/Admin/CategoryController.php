@@ -44,6 +44,10 @@ class CategoryController extends Controller
         $category->slug = Str::slug($request->input('name'), '-');
         $category->parent = $request->categories;
         $category->status = !empty($request->status) ? true : false;
+        if ($request->file('cover')) {
+            $path = $request->file('cover')->store('thumb', 'public_uploads');
+            $category->cover = $path;
+        }
         if ($category->save()) {
             return redirect()->route('admin.categories.index');
         }
@@ -92,6 +96,11 @@ class CategoryController extends Controller
         $category->parent = $request->categories;
         if (empty($request->status)) {
             $category->status = false;
+        }
+
+        if ($request->file('cover')) {
+            $path = $request->file('cover')->store('thumb', 'public_uploads');
+            $category->cover = $path;
         }
         if ($category->save()) {
             return redirect()->route('admin.categories.index');

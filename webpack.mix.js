@@ -15,7 +15,7 @@ mix
     .styles(
         [
             'public/css/open-iconic-bootstrap.min.css',
-            'public/css/aos.css',
+            // 'public/css/aos.css',
             'public/css/style.css'
         ],
         'public/css/bundle.min.css'

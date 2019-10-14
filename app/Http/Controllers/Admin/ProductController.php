@@ -56,6 +56,16 @@ class ProductController extends Controller
             $product->data = json_encode($data);
             $product->status = !empty($request->status) ? true : false;
             $product->prior = !empty($request->prior) ? true : false;
+            if ($files = $request->file('images')) {
+                $images = [];
+                foreach($files as $file){
+                    $name = time() . '-' . $file->getClientOriginalName();
+                    $file->move(Product::FOLDER_DETAIL_IMAGES, $name);
+                    $path = Product::FOLDER_DETAIL_IMAGES . $name;
+                    $images[] = $path;
+                }
+                $product->images = json_encode($images);
+            }
             if ($product->save()) {
                 return redirect()->route('admin.products.index');
             }
@@ -120,6 +130,17 @@ class ProductController extends Controller
         if ($request->file('cover')) {
             $path = $request->file('cover')->store('thumb', 'public_uploads');
             $product->cover = $path;
+        }
+
+        if ($files = $request->file('images')) {
+            $images = [];
+            foreach($files as $file){
+                $name = time() . '-' . $file->getClientOriginalName();
+                $file->move(Product::FOLDER_DETAIL_IMAGES, $name);
+                $path = Product::FOLDER_DETAIL_IMAGES . $name;
+                $images[] = $path;
+            }
+            $product->images = json_encode($images);
         }
         $product->category_id = $request->input('categories');
         if ($product->save()) {

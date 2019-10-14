@@ -6,6 +6,7 @@ use Illuminate\Database\Eloquent\Model;
 
 class Service extends Model
 {
+    const IS_ACTIVE = 1;
     const IS_SERVICE = 1;
     const IS_SHARE_INFORMATION = 0;
     const DEFAULT_NUMBER = 10;
@@ -24,9 +25,9 @@ class Service extends Model
             $posts = Service::where([
                 ['type', $type],
                 [ 'id', '!=', $exclude]
-            ])->offset($offset)->take($number)->get();
+            ])->where('status', self::IS_ACTIVE)->offset($offset)->take($number)->orderBy('updated_at', 'DESC')->get();
         } else {
-            $posts = Service::where('type', $type)->whereNotIn('id', $exclude)->offset($offset)->take($number)->get();
+            $posts = Service::where('type', $type)->where('status', self::IS_ACTIVE)->whereNotIn('id', $exclude)->offset($offset)->take($number)->orderBy('updated_at', 'DESC')->get();
         }
         return $posts;
     }
@@ -35,7 +36,7 @@ class Service extends Model
      */
     public function getServicesPrior()
     {
-        $posts = Service::where('type', self::IS_SERVICE)->take(6)->get();
+        $posts = Service::where('type', self::IS_SERVICE)->where('status', self::IS_ACTIVE)->take(6)->get();
         return $posts;
     }
 
@@ -45,7 +46,7 @@ class Service extends Model
      */
     public function getPostServiceDetailBySlug($slug)
     {
-        $post = Service::where('slug', $slug)
+        $post = Service::where('slug', $slug)->where('status', self::IS_ACTIVE)
             ->first();
         return $post;
     }

@@ -47,6 +47,7 @@ class ServiceController extends Controller
             $services->excerpt = $request->input('excerpt');
             $services->cover = $path;
             $services->type = !empty($request->input('type')) ? 1 : 0;
+            $services->status = !empty($request->status) ? true : false;
             if ($services->save()) {
                 return redirect()->route('admin.services.index');
             }
@@ -96,6 +97,10 @@ class ServiceController extends Controller
         $service->description = $request->input('description');
         $service->excerpt = $request->input('excerpt');
         $service->type = !empty($request->input('type')) ? 1 : 0;
+        $service->status = true;
+        if (empty($request->status)) {
+            $service->status = false;
+        }
         if ($request->file('photo')) {
             $path = $request->file('photo')->store('thumb', 'public_uploads');
             $service->cover = $path;

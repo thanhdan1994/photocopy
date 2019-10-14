@@ -27,6 +27,9 @@
             </div>
             <div class="form-check">
                 <label class="form-check-label">
+                    <input type="checkbox" class="form-check-input" name="status" @if($service->status) checked @endif />Kích hoạt
+                </label>
+                <label class="form-check-label ml-5">
                     <input type="checkbox" class="form-check-input" name="type" @if($service->type) checked @endif>Là dịch vụ
                 </label>
             </div>

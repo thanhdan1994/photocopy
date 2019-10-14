@@ -57,13 +57,13 @@
                     </div>
                     <div class="form-group">
                         <label>Ảnh đại diện: </label>
-                        <div class="col-md-3">
-                            <div class="row">
+                        <div class="row">
+                            <div class="col-md-3">
                                 <img src="{{asset('uploads/' . $product->cover)}}" alt="" class="img-responsive img-thumbnail">
                             </div>
                         </div>
+                        <input type="file" name="cover" />
                     </div>
-                    <input type="file" name="cover" />
                     <div class="form-check">
                         <label class="form-check-label">
                             <input type="checkbox" class="form-check-input" name="status" @if($product->status) checked @endif />Kích hoạt
@@ -71,6 +71,19 @@
                         <label class="form-check-label ml-5">
                             <input type="checkbox" class="form-check-input" name="prior" @if($product->prior) checked @endif />Nổi bật
                         </label>
+                    </div>
+                    <div class="form-group">
+                        <label>Ảnh chi tiết:</label>
+                        @if($images = json_decode($product->images))
+                        <div class="row">
+                            @foreach($images as $image)
+                            <div class="col-md-3">
+                                <img src="{{asset($image)}}" alt="" class="img-responsive img-thumbnail">
+                            </div>
+                            @endforeach
+                        </div>
+                        @endif
+                        <input type="file" name="images[]" multiple />
                     </div>
                     <button type="submit" class="btn btn-primary">Save</button>
                 </div>

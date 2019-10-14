@@ -1,14 +1,15 @@
 @extends('layouts.app')
-    @section('title', $product->name)
-    @section('metaName')
-        <meta name="description" content="{{ strip_tags($product->description) }}"/>
-        <meta property="og:type" content="product"/>
-        <meta property="og:title" content="{{ $product->name }}"/>
-        <meta property="og:description" content="{{ strip_tags($product->description) }}"/>
-        @if(!is_null($product->cover))
-            <meta property="og:image" content="{{ asset("uploads/$product->cover") }}"/>
-        @endif
-    @endsection
+
+@section('title', $product->name)
+@section('metaName')
+    <meta name="description" content="{{ strip_tags($product->description) }}"/>
+    <meta property="og:type" content="product"/>
+    <meta property="og:title" content="{{ $product->name }}"/>
+    <meta property="og:description" content="{{ strip_tags($product->description) }}"/>
+    @if(!is_null($product->cover))
+        <meta property="og:image" content="{{ asset("uploads/$product->cover") }}"/>
+    @endif
+@endsection
 @php
     $category = $product->category;
     $categoryRoot = $category->parentCategory;
@@ -64,7 +65,8 @@
     </script>
 @endsection
 @section('content')
-    <div class="ftco-section">
+    <!-- Start main Content -->
+    <div class="maincontent bg--white pt--80 pb--55">
         <nav aria-label="breadcrumb">
             <ol class="breadcrumb">
                 <li class="breadcrumb-item"><a href="{{env('APP_URL')}}">Trang chủ</a></li>
@@ -84,76 +86,118 @@
             </ol>
         </nav>
         <div class="container">
-            <div class="block-3 d-md-flex" data-aos="fade-left">
-                <div class="image" style="background-image: url({{asset('uploads/'.$product->cover)}}); "></div>
-                <div class="text">
-                    <h1 class="heading">{{$product->name}}</h1>
-                    <span class="price-detail">Giá: <span>{{number_format($product->price, 0, ',', '.')}} VNĐ / {{$product->measure}}</span></span>
-                    <ul>
-                        @foreach(json_decode($product->data) as $key => $item)
-                            <li>{{$item}}</li>
-                        @endforeach
-                    </ul>
-                </div>
-            </div>
             <div class="row">
-                <div class="col-md-8 block-img-fluid">
-                    {!! regexContent($product->body) !!}
-                </div> <!-- .col-md-8 -->
-                <div class="col-md-4 sidebar">
-                    <div class="sidebar-box">
-                        <form action="#" class="search-form">
-                            <div class="form-group">
-                                <span class="icon fa fa-search"></span>
-                                <input type="text" class="form-control" placeholder="Type a keyword and hit enter">
+                <div class="col-lg-9 col-12">
+                    <div class="wn__single__product">
+                        <div class="row">
+                            <div class="col-lg-6 col-12">
+                                <div class="wn__fotorama__wrapper">
+                                    <div class="fotorama wn__fotorama__action" data-nav="thumbs">
+                                        @if($images = json_decode($product->images))
+                                            @foreach($images as $image)
+                                                <img src="{{asset($image)}}" alt="">
+                                            @endforeach
+                                        @endif
+                                    </div>
+                                </div>
                             </div>
-                        </form>
-                    </div>
-                    <div class="sidebar-box">
-                        <div class="categories">
-                            <h3>Categories</h3>
-                            <li><a href="#">Courses <span>(12)</span></a></li>
-                            <li><a href="#">News <span>(22)</span></a></li>
-                            <li><a href="#">Design <span>(37)</span></a></li>
-                            <li><a href="#">HTML <span>(42)</span></a></li>
-                            <li><a href="#">Web Development <span>(14)</span></a></li>
+                            <div class="col-lg-6 col-12">
+                                <div class="product__info__main">
+                                    <h1>{{$product->name}}</h1>
+                                    <div class="price-box">
+                                        <span>{{number_format($product->price, 0, ',', '.')}} VND</span>
+                                    </div>
+                                    <div class="product-infomation">
+                                        <ul>
+                                            @foreach(json_decode($product->data) as $key => $item)
+                                                <li>{{$item}}</li>
+                                            @endforeach
+                                        </ul>
+                                    </div>
+                                    <div class="product__overview">
+                                        <p>{{$product->description}}</p>
+                                    </div>
+                                </div>
+                            </div>
                         </div>
                     </div>
-                    <div class="sidebar-box">
-                        <img src="/images/person_1.jpg" alt="Image placeholder" class="img-fluid mb-4">
-                        <h3>About The Author</h3>
-                        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ducimus itaque, autem necessitatibus voluptate quod mollitia delectus aut, sunt placeat nam vero culpa sapiente consectetur similique, inventore eos fugit cupiditate numquam!</p>
-                        <p><a href="#" class="btn btn-primary btn-sm">Read More</a></p>
-                    </div>
-
-                    <div class="sidebar-box">
-                        <h3>Tag Cloud</h3>
-                        <div class="tagcloud">
-                            <a href="#" class="tag-cloud-link">Life</a>
-                            <a href="#" class="tag-cloud-link">Sport</a>
-                            <a href="#" class="tag-cloud-link">Tech</a>
-                            <a href="#" class="tag-cloud-link">Travel</a>
-                            <a href="#" class="tag-cloud-link">Life</a>
-                            <a href="#" class="tag-cloud-link">Sport</a>
-                            <a href="#" class="tag-cloud-link">Tech</a>
-                            <a href="#" class="tag-cloud-link">Travel</a>
+                    <div class="product__info__detailed">
+                        <div class="pro_details_nav nav justify-content-start" role="tablist">
+                            <a class="nav-item nav-link active" data-toggle="tab" href="#nav-details" role="tab">Chi tiết sản phẩm</a>
+                        </div>
+                        <div class="tab__container">
+                            <!-- Start Single Tab Content -->
+                            <div class="pro__tab_label tab-pane fade show active" id="nav-details" role="tabpanel">
+                                <div class="description__attribute">
+                                    {!! $product->body !!}
+                                </div>
+                            </div>
+                            <!-- End Single Tab Content -->
                         </div>
                     </div>
-
-                    <div class="sidebar-box">
-                        <h3>Paragraph</h3>
-                        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ducimus itaque, autem necessitatibus voluptate quod mollitia delectus aut, sunt placeat nam vero culpa sapiente consectetur similique, inventore eos fugit cupiditate numquam!</p>
+                    <div class="wn__related__product pt--80 pb--50">
+                        <div class="section__title text-center">
+                            <h2 class="title__be--2">Các sản phẩm khác</h2>
+                        </div>
+                        <div class="row mt--60">
+                            <div class="productcategory__slide--2 arrows_style owl-carousel owl-theme">
+                                @foreach($products as $key => $product)
+                                    <!-- Start Single Product -->
+                                    @include('front.product-item', compact('product'))
+                                    <!-- Start Single Product -->
+                                @endforeach
+                            </div>
+                        </div>
+                    </div>
+                    <div class="wn__related__product">
+                        <div class="section__title text-center">
+                            <h2 class="title__be--2">Sản phẩm được quan tâm nhiều nhất</h2>
+                        </div>
+                        <div class="row mt--60">
+                            <div class="productcategory__slide--2 arrows_style owl-carousel owl-theme">
+                                @foreach($productsPrior as $key => $product)
+                                    <!-- Start Single Product -->
+                                    @include('front.product-item', compact('product'))
+                                    <!-- Start Single Product -->
+                                @endforeach
+                            </div>
+                        </div>
                     </div>
                 </div>
-            </div>
-            <div class="block-more" style="text-align: center">
-                <h4>Sản phẩm khác của chúng tôi</h4>
-                <div class="row multiple-items">
-                    @foreach($products as $key => $product)
-                        @include('front.product-category.product-item', compact('product'))
-                    @endforeach
+                <div class="col-lg-3 col-12 md-mt-40 sm-mt-40">
+                    <div class="wn__sidebar">
+                        <!-- Start Single Widget -->
+                        <aside class="widget recent_widget">
+                            <h3 class="widget-title">Sản phẩm được yêu thích</h3>
+                            <div class="recent-posts">
+                                <ul>
+                                    @foreach($productsPrior as $key => $product)
+                                    <li>
+                                        <div class="post-wrapper d-flex">
+                                            <div class="thumb">
+                                                <a href="/{{$product->category['slug']}}/chi-tiet/{{$product->slug}}/pro-{{$product->id}}.html">
+                                                    <img src="{{asset('uploads/'.$product->cover)}}" alt="blog images">
+                                                </a>
+                                            </div>
+                                            <div class="content">
+                                                <h4>
+                                                    <a href="/{{$product->category['slug']}}/chi-tiet/{{$product->slug}}/pro-{{$product->id}}.html">
+                                                        {{$product->name}}
+                                                    </a>
+                                                </h4>
+                                                <p>{{number_format($product->price, 0, ',', '.')}} VNĐ</p>
+                                            </div>
+                                        </div>
+                                    </li>
+                                    @endforeach
+                                </ul>
+                            </div>
+                        </aside>
+                        <!-- End Single Widget -->
+                    </div>
                 </div>
             </div>
         </div>
-    </div> <!-- .section -->
+    </div>
+    <!-- End main Content -->
 @endsection

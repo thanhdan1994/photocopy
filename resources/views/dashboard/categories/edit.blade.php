@@ -23,6 +23,17 @@
                     </div>
                 </div>
             </div>
+            <div class="form-group">
+                <label>Ảnh đại diện: </label>
+                @if($category->cover != null)
+                    <div class="row">
+                        <div class="col-md-3">
+                            <img src="{{asset('uploads/' . $category->cover)}}" alt="" class="img-responsive img-thumbnail">
+                        </div>
+                    </div>
+                @endif
+                <input type="file" name="cover" />
+            </div>
             <div class="form-check">
                 <label class="form-check-label">
                     <input type="checkbox" class="form-check-input" name="status" @if($category->status) checked @endif />Kích hoạt
