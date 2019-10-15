@@ -1,7 +1,7 @@
 <article class="blog__post d-flex flex-wrap">
     <div class="thumb">
         <a href="/dich-vu/{{$blog->slug .'.html'}}">
-            <img src="{{asset('uploads/'.$blog->cover)}}" alt="blog images">
+            <img class="lazy" data-src="{{asset('uploads/'.$blog->cover)}}" alt="{{$blog->name}}">
         </a>
     </div>
     <div class="content">

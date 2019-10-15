@@ -71,6 +71,9 @@
                         <label class="form-check-label ml-5">
                             <input type="checkbox" class="form-check-input" name="prior" @if($product->prior) checked @endif />Nổi bật
                         </label>
+                        <label class="form-check-label ml-5">
+                            <input type="checkbox" class="form-check-input" name="type" @if($product->type == 'RENT') checked @endif /> Cho thuê
+                        </label>
                     </div>
                     <div class="form-group">
                         <label>Ảnh chi tiết:</label>

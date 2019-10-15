@@ -56,6 +56,7 @@ class ProductController extends Controller
             $product->data = json_encode($data);
             $product->status = !empty($request->status) ? true : false;
             $product->prior = !empty($request->prior) ? true : false;
+            $product->prior = !empty($request->type) ? 'RENT' : 'SELL';
             if ($files = $request->file('images')) {
                 $images = [];
                 foreach($files as $file){
@@ -121,11 +122,15 @@ class ProductController extends Controller
         $product->data = json_encode($data);
         $product->status = true;
         $product->prior = true;
+        $product->type = 'RENT';
         if (empty($request->status)) {
             $product->status = false;
         }
         if (empty($request->prior)) {
             $product->prior = false;
+        }
+        if (empty($request->type)) {
+            $product->type = 'SELL';
         }
         if ($request->file('cover')) {
             $path = $request->file('cover')->store('thumb', 'public_uploads');

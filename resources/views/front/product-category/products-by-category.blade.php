@@ -47,13 +47,6 @@
                                     <a class="nav-item nav-link active" data-toggle="tab" href="#nav-grid" role="tab"><i class="fa fa-th"></i></a>
                                     <a class="nav-item nav-link" data-toggle="tab" href="#nav-list" role="tab"><i class="fa fa-list"></i></a>
                                 </div>
-                                <div class="orderby__wrapper">
-                                    <span>Sắp xếp theo</span>
-                                    <select class="shot__byselect">
-                                        <option>Giá tiền</option>
-                                        <option>Mới nhất</option>
-                                    </select>
-                                </div>
                             </div>
                         </div>
                     </div>
@@ -62,17 +55,14 @@
                             <div class="row">
                                 @foreach($products as $key => $product)
                                 <!-- Start Single Product -->
-                                <div class="product product__style--3 col-lg-4 col-md-4 col-sm-6 col-12">
-                                    <div class="product__thumb">
+                                <div class="product product__style--3 col-lg-4 col-md-4 col-sm-6 col-12 height-440">
+                                    <div class="product__thumb height-340">
                                         <a class="first__img" href="/{{$product->category['slug']}}/chi-tiet/{{$product->slug}}/pro-{{$product->id}}.html">
-                                            <img src="{{asset('uploads/'.$product->cover)}}" alt="product image">
+                                            <img class="lazy" data-src="{{asset('uploads/'.$product->cover)}}" alt="{{$product->name}}">
                                         </a>
-                                        <a class="second__img animation1" href="/{{$product->category['slug']}}/chi-tiet/{{$product->slug}}/pro-{{$product->id}}.html">
-                                            <img src="{{asset('uploads/'.$product->cover)}}" alt="product image">
-                                        </a>
-                                        <div class="hot__box">
-                                            <span class="hot-label">BEST SALLER</span>
-                                        </div>
+{{--                                        <div class="hot__box">--}}
+{{--                                            <span class="hot-label">BEST SALLER</span>--}}
+{{--                                        </div>--}}
                                     </div>
                                     <div class="product__content content--center">
                                         <h4>
@@ -80,9 +70,13 @@
                                                 {{$product->name}}
                                             </a>
                                         </h4>
-                                        <ul class="prize d-flex">
-                                            <li>{{number_format($product->price, 0, ',', '.')}}</li>
-                                            <li class="old_prize">{{number_format($product->price, 0, ',', '.')}}</li>
+                                        <ul class="prize">
+                                            @if($product->type == 'SELL')
+                                                <li>Giá bán: {{number_format($product->price, 0, ',', '.')}} VND</li>
+{{--                                                <li class="old_prize">Giá cũ: {{number_format($product->price, 0, ',', '.')}}</li>--}}
+                                            @else
+                                                <li>Giá thuê: {{number_format($product->price, 0, ',', '.')}} VND</li>
+                                            @endif
                                         </ul>
                                         <div class="product__hover--content">
                                             <ul class="rating d-flex">
@@ -126,9 +120,16 @@
                                             <li><i class="fa fa-star-o"></i></li>
                                             <li><i class="fa fa-star-o"></i></li>
                                         </ul>
+                                        <div class="product-infomation">
+                                            <ul>
+                                                @foreach(json_decode($product->data) as $key => $item)
+                                                    <li>{{$item}}</li>
+                                                @endforeach
+                                            </ul>
+                                        </div>
                                         <ul class="prize__box">
-                                            <li>{{number_format($product->price, 0, ',', '.')}}</li>
-                                            <li class="old__prize">{{number_format($product->price, 0, ',', '.')}}</li>
+                                            <li>Giá bán: {{number_format($product->price, 0, ',', '.')}}</li>
+{{--                                            <li class="old__prize">{{number_format($product->price, 0, ',', '.')}}</li>--}}
                                         </ul>
                                     </div>
                                 </div>
@@ -141,33 +142,22 @@
                 <div class="col-lg-3 col-12 md-mt-40 sm-mt-40">
                     <div class="wn__sidebar">
                         <!-- Start Single Widget -->
-                        <aside class="widget recent_widget">
-                            <h3 class="widget-title">Sản phẩm được yêu thích</h3>
-                            <div class="recent-posts">
-                                <ul>
-                                    @foreach($productsPrior as $key => $product)
-                                        <li>
-                                            <div class="post-wrapper d-flex">
-                                                <div class="thumb">
-                                                    <a href="/{{$product->category['slug']}}/chi-tiet/{{$product->slug}}/pro-{{$product->id}}.html">
-                                                        <img src="{{asset('uploads/'.$product->cover)}}" alt="blog images">
-                                                    </a>
-                                                </div>
-                                                <div class="content">
-                                                    <h4>
-                                                        <a href="/{{$product->category['slug']}}/chi-tiet/{{$product->slug}}/pro-{{$product->id}}.html">
-                                                            {{$product->name}}
-                                                        </a>
-                                                    </h4>
-                                                    <p>{{number_format($product->price, 0, ',', '.')}} VNĐ</p>
-                                                </div>
-                                            </div>
-                                        </li>
-                                    @endforeach
-                                </ul>
-                            </div>
-                        </aside>
+                        @include('front.block.aside-product', compact('productsPrior'))
                         <!-- End Single Widget -->
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-lg-9 col-12">
+                    <div class="blog-page">
+                        <div class="page__header">
+                            <h2>Danh sách dịch vụ của chúng tôi</h2>
+                        </div>
+                    @foreach($services as $key => $service)
+                        <!-- Start Single Post -->
+                        @include('front.blog-item', ['blog' => $service])
+                        <!-- End Single Post -->
+                        @endforeach
                     </div>
                 </div>
             </div>

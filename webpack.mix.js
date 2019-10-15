@@ -14,18 +14,37 @@ let mix = require('laravel-mix');
 mix
     .styles(
         [
-            'public/css/open-iconic-bootstrap.min.css',
-            // 'public/css/aos.css',
-            'public/css/style.css'
+            'public/css/bootstrap.min.css',
+            'public/css/plugins/font-awesome.min.css',
+            'public/css/plugins/bicon.min.css',
+            'public/css/plugins/pe-icon-7-stroke.css',
+            'public/css/plugins/slick.min.css',
+            'public/css/plugins/fakeloader.css',
+            'public/css/plugins/nivo-slider.css',
+            'public/css/plugins/nivo-preview-2.css',
+            'public/css/plugins/owl.carousel.min.css',
+            'public/css/plugins/owl.theme.default.min.css',
+            'public/css/plugins/material-design-iconic-font.min.css',
+            'public/css/plugins/animation.css',
+            'public/css/plugins/fancybox.css',
+            'public/css/plugins/mainmenu.css',
+            'public/css/plugins/fotorama.css',
+            'public/css/plugins/simple-line-icons.css',
+            'public/css/plugins/jquery-ui.min.css',
+            'public/css/plugins/lightbox.css',
+            'public/style.css',
+            'public/css/custom.css'
         ],
         'public/css/bundle.min.css'
     )
     .scripts(
         [
-            'public/js/jquery.min.js',
+            'public/js/vendor/jquery-3.2.1.min.js',
+            'public/js/popper.min.js',
             'public/js/bootstrap.min.js',
-            'public/js/aos.js',
-            'public/js/main.js',
+            'public/js/plugins.js',
+            'public/js/active.js',
+            'public/js/lazyload.js',
         ],
         'public/js/bundle.min.js'
     )

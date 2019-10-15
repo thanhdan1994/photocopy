@@ -7,6 +7,7 @@
             <tr>
                 <th scope="col">#</th>
                 <th scope="col">Tên sản phẩm</th>
+                <th scope="col">Loại kinh doanh</th>
                 <th scope="col">Nổi bật</th>
                 <th scope="col">Ảnh</th>
                 <th scope="col">Loại sản phẩm</th>
@@ -19,6 +20,13 @@
                 <tr>
                     <th scope="row">{{$product->id}}</th>
                     <td>{{$product->name}}</td>
+                    <td>
+                        @if($product->type == 'SELL')
+                            <span class="bg-success text-black">Bán</span>
+                        @else
+                            <span class="bg-warning text-black">Cho thuê</span>
+                        @endif
+                    </td>
                     <td>
                         @if($product->prior)
                             <span class="bg-success text-black">Nổi bật</span>

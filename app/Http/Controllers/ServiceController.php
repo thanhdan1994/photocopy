@@ -24,7 +24,8 @@ class ServiceController extends Controller
 
     public function index()
     {
+        $productsPrior = $this->productRepo->getProductsByPrior(1, 6, false, [], 'updated_at');
         $services = $this->serviceRepo->getPosts(1, 10, Service::IS_SERVICE);
-        return view('front.services', compact('services'));
+        return view('front.services', compact('services', 'productsPrior'));
     }
 }

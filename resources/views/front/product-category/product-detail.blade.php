@@ -66,7 +66,7 @@
 @endsection
 @section('content')
     <!-- Start main Content -->
-    <div class="maincontent bg--white pt--80 pb--55">
+    <div class="maincontent bg--white pb--55">
         <nav aria-label="breadcrumb">
             <ol class="breadcrumb">
                 <li class="breadcrumb-item"><a href="{{env('APP_URL')}}">Trang chủ</a></li>
@@ -167,32 +167,7 @@
                 <div class="col-lg-3 col-12 md-mt-40 sm-mt-40">
                     <div class="wn__sidebar">
                         <!-- Start Single Widget -->
-                        <aside class="widget recent_widget">
-                            <h3 class="widget-title">Sản phẩm được yêu thích</h3>
-                            <div class="recent-posts">
-                                <ul>
-                                    @foreach($productsPrior as $key => $product)
-                                    <li>
-                                        <div class="post-wrapper d-flex">
-                                            <div class="thumb">
-                                                <a href="/{{$product->category['slug']}}/chi-tiet/{{$product->slug}}/pro-{{$product->id}}.html">
-                                                    <img src="{{asset('uploads/'.$product->cover)}}" alt="blog images">
-                                                </a>
-                                            </div>
-                                            <div class="content">
-                                                <h4>
-                                                    <a href="/{{$product->category['slug']}}/chi-tiet/{{$product->slug}}/pro-{{$product->id}}.html">
-                                                        {{$product->name}}
-                                                    </a>
-                                                </h4>
-                                                <p>{{number_format($product->price, 0, ',', '.')}} VNĐ</p>
-                                            </div>
-                                        </div>
-                                    </li>
-                                    @endforeach
-                                </ul>
-                            </div>
-                        </aside>
+                        @include('front.block.aside-product', compact('productsPrior'))
                         <!-- End Single Widget -->
                     </div>
                 </div>

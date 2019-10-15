@@ -16,13 +16,14 @@
     <link href="https://fonts.googleapis.com/css?family=Roboto:100,300,400,500,700,900" rel="stylesheet">
 
     <!-- Stylesheets -->
-    <link rel="stylesheet" href="{{asset('css/bootstrap.min.css')}}">
-    <link rel="stylesheet" href="{{asset('css/plugins.css')}}">
-    <link rel="stylesheet" href="{{asset('style.css')}}">
+{{--    <link rel="stylesheet" href="{{asset('css/bootstrap.min.css')}}">--}}
+{{--    <link rel="stylesheet" href="{{asset('css/plugins.css')}}">--}}
+{{--    <link rel="stylesheet" href="{{asset('style.css')}}">--}}
     <!-- Cusom css -->
-    <link rel="stylesheet" href="{{asset('css/custom.css')}}">
+{{--    <link rel="stylesheet" href="{{asset('css/custom.css')}}">--}}
+    <link rel="stylesheet" href="{{asset('css/bundle.min.css')}}">
     <!-- Modernizer js -->
-    <script src="{{asset('js/vendor/modernizr-3.5.0.min.js')}}"></script>
+{{--    <script src="{{asset('js/vendor/modernizr-3.5.0.min.js')}}"></script>--}}
     @yield('jsonLd')
 </head>
 <body>
@@ -55,11 +56,6 @@
                         </ul>
                     </nav>
                 </div>
-                <div class="col-md-6 col-sm-6 col-6 col-lg-2">
-                    <ul class="header__sidebar__right d-flex justify-content-end align-items-center">
-                        <li class="shop_search"><a class="search__active" href="#"></a></li>
-                    </ul>
-                </div>
             </div>
             <!-- Start Mobile Menu -->
             <div class="row d-none">
@@ -82,23 +78,6 @@
         </div>
     </header>
     <!-- //Header -->
-    <!-- Start Search Popup -->
-    <div class="box-search-content search_active block-bg close__top">
-        <form id="search_mini_form" class="minisearch" action="/tim-kiem" method="GET">
-            <div class="field__search">
-                <input type="text" name="q" placeholder="Nhập sản phẩm cần tìm ở đây...">
-                <div class="action">
-                    <a href="#" id="searchButton">
-                        <i class="zmdi zmdi-search"></i>
-                    </a>
-                </div>
-            </div>
-        </form>
-        <div class="close__wrap">
-            <span>close</span>
-        </div>
-    </div>
-    <!-- End Search Popup -->
     @yield('content')
     <!-- Footer Area -->
     <footer id="wn__footer" class="footer__area bg__cat--8 brown--color">
@@ -170,45 +149,12 @@
 <!-- //Main wrapper -->
 
 <!-- JS Files -->
-<script src="{{asset('js/vendor/jquery-3.2.1.min.js')}}"></script>
-<script src="{{asset('js/popper.min.js')}}"></script>
-<script src="{{asset('js/bootstrap.min.js')}}"></script>
-<script src="{{asset('js/plugins.js')}}"></script>
-<script src="{{asset('js/active.js')}}"></script>
-<script>
-    document.addEventListener("DOMContentLoaded", function() {
-        var lazyImages = [].slice.call(document.querySelectorAll("img.lazy"));
-
-        if ("IntersectionObserver" in window) {
-            let lazyImageObserver = new IntersectionObserver(function(entries, observer) {
-                entries.forEach(function(entry) {
-                    if (entry.isIntersecting) {
-                        let lazyImage = entry.target;
-                        lazyImage.src = lazyImage.dataset.src;
-                        lazyImage.classList.remove("lazy");
-                        lazyImageObserver.unobserve(lazyImage);
-                    }
-                });
-            });
-
-            lazyImages.forEach(function(lazyImage) {
-                lazyImageObserver.observe(lazyImage);
-            });
-        } else {
-            // Possibly fall back to a more compatible method here
-        }
-    });
-</script>
-<script>
-    document.getElementById("searchButton").onclick = function(e) {
-        e.preventDefault();
-        let searchString = $('#search_mini_form').find('input[name="q"]').val();
-        if (searchString.length > 4) {
-            document.getElementById("search_mini_form").submit();
-        } else {
-            alert("bạn phải nhập ít nhất 5 kí tự");
-        }
-    }
-</script>
+{{--<script src="{{asset('js/vendor/jquery-3.2.1.min.js')}}"></script>--}}
+{{--<script src="{{asset('js/popper.min.js')}}"></script>--}}
+{{--<script src="{{asset('js/bootstrap.min.js')}}"></script>--}}
+{{--<script src="{{asset('js/plugins.js')}}"></script>--}}
+{{--<script src="{{asset('js/active.js')}}"></script>--}}
+{{--<script src="{{asset('js/lazyload.js')}}"></script>--}}
+<script src="{{asset('js/bundle.min.js')}}"></script>
 </body>
 </html>

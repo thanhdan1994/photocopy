@@ -37,7 +37,7 @@
                 <div class="col-lg-12">
                     <div class="section__title text-center">
                         <h2 class="title__be--2">Sản phẩm nổi bật</h2>
-                        <p>There are many variations of passages of Lorem Ipsum available, but the majority have suffered lebmid alteration in some ledmid form</p>
+                        <p>Danh sách máy photocopy, máy in được nhiều người quan tâm nhất</p>
                     </div>
                 </div>
             </div>
@@ -88,7 +88,7 @@
                                                     <div class="post-wrapper d-flex">
                                                         <div class="thumb">
                                                             <a href="/{{$product->category['slug']}}/chi-tiet/{{$product->slug}}/pro-{{$product->id}}.html">
-                                                                <img src="{{asset('uploads/'.$product->cover)}}" alt="blog images">
+                                                                <img class="lazy" data-src="{{asset('uploads/'.$product->cover)}}" alt="blog images">
                                                             </a>
                                                         </div>
                                                         <div class="content">

@@ -22,6 +22,10 @@
                     </div>
                 </div>
             </div>
+            <div class="form-group">
+                <label>Ảnh đại diện: </label>
+                <input type="file" name="cover" />
+            </div>
             <div class="form-check">
                 <label class="form-check-label">
                     <input type="checkbox" class="form-check-input" name="status" />Kích hoạt
