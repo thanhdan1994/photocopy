@@ -95,7 +95,7 @@
                                     <div class="fotorama wn__fotorama__action" data-nav="thumbs">
                                         @if($images = json_decode($product->images))
                                             @foreach($images as $image)
-                                                <img src="{{asset($image)}}" alt="">
+                                                <img src="{{asset($image)}}" aria-label="{{$product->name}}" />
                                             @endforeach
                                         @endif
                                     </div>
@@ -124,12 +124,42 @@
                     <div class="product__info__detailed">
                         <div class="pro_details_nav nav justify-content-start" role="tablist">
                             <a class="nav-item nav-link active" data-toggle="tab" href="#nav-details" role="tab">Chi tiết sản phẩm</a>
+                            <a class="nav-item nav-link" data-toggle="tab" href="#nav-rating" role="tab">Đánh giá sản phẩm</a>
                         </div>
                         <div class="tab__container">
                             <!-- Start Single Tab Content -->
                             <div class="pro__tab_label tab-pane fade show active" id="nav-details" role="tabpanel">
                                 <div class="description__attribute">
                                     {!! $product->body !!}
+                                </div>
+                            </div>
+                            <!-- End Single Tab Content -->
+                            <!-- Start Single Tab Content -->
+                            <div class="pro__tab_label tab-pane fade" id="nav-rating" role="tabpanel">
+                                <div class="review__attribute">
+                                    <h1>Đánh giá sản phẩm</h1>
+                                    <div class="rating--custom">
+                                        <input type="radio" name="star" value="5" id="star1"><label for="star1"></label>
+                                        <input type="radio" name="star" value="4" id="star2"><label for="star2"></label>
+                                        <input type="radio" name="star" value="3" id="star3"><label for="star3"></label>
+                                        <input type="radio" name="star" value="2" id="star4"><label for="star4"></label>
+                                        <input type="radio" name="star" value="1" id="star5"><label for="star5"></label>
+                                    </div>
+                                </div>
+                                <div class="review-fieldset">
+                                    <div class="review_form_field">
+                                        <div class="input__box">
+                                            <span class="required">Tên của bạn</span>
+                                            <input id="nickname_field" type="text" name="nickname">
+                                        </div>
+                                        <div class="input__box">
+                                            <span>Hãy cho chúng tôi biết suy nghĩ của bạn</span>
+                                            <textarea name="review"></textarea>
+                                        </div>
+                                        <div class="review-form-actions">
+                                            <button type="submit">Gửi đánh giá</button>
+                                        </div>
+                                    </div>
                                 </div>
                             </div>
                             <!-- End Single Tab Content -->

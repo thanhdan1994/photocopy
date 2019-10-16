@@ -9,16 +9,16 @@
     <div id="carouselExampleControls" class="carousel slide" data-ride="carousel">
         <div class="carousel-inner">
             <div class="carousel-item active">
-                <img class="d-block w-100" src="https://mdbootstrap.com/img/Photos/Slides/img%20(45).jpg"
-                     alt="First slide">
+                <img class="d-block w-100" src="{{asset('images/banner-home/banner-1.webp')}}"
+                     alt="Cho thuê máy photocopy">
             </div>
             <div class="carousel-item">
-                <img class="d-block w-100" src="https://mdbootstrap.com/img/Photos/Slides/img%20(46).jpg"
-                     alt="Second slide">
+                <img class="d-block w-100" src="{{asset('images/banner-home/banner-2.webp')}}"
+                     alt="Sửa chữa máy photocopy, máy in tận nơi tại TPHCM.">
             </div>
             <div class="carousel-item">
-                <img class="d-block w-100" src="https://mdbootstrap.com/img/Photos/Slides/img%20(47).jpg"
-                     alt="Third slide">
+                <img class="d-block w-100" src="{{asset('images/banner-home/banner-3.webp')}}"
+                     alt="Máy in màu chất lượng bản in đẹp">
             </div>
         </div>
         <a class="carousel-control-prev" href="#carouselExampleControls" role="button" data-slide="prev">

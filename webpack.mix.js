@@ -39,7 +39,7 @@ mix
     )
     .scripts(
         [
-            'public/js/vendor/jquery-3.2.1.min.js',
+            'public/js/vendor/jquery-3.4.1.min.js',
             'public/js/popper.min.js',
             'public/js/bootstrap.min.js',
             'public/js/plugins.js',

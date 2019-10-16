@@ -6,7 +6,7 @@
 @section('content')
     <!-- Start Bradcaump area -->
     <div class="pt--90">
-        <img src="{{asset('images/bg/dich-vu.jpg')}}" />
+        <img src="{{asset('images/bg/dich-vu.jpg')}}" alt="dịch vụ cho thuê máy photocopy, sửa chữa máy in tận nơi" />
     </div>
     <!-- End Bradcaump area -->
     <!-- Start Blog Area -->

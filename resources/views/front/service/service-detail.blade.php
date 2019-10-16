@@ -14,8 +14,8 @@
                         Dịch vụ
                     </a>
                 </li>
-                <li class="breadcrumb-item active">
-                        {{$service->name}}
+                <li class="breadcrumb-item">
+                    {{$service->name}}
                 </li>
             </ol>
         </nav>
@@ -31,12 +31,6 @@
                             <div class="post_wrapper">
                                 <div class="post_header">
                                     <h1>{{$service->name}}</h1>
-                                    <div class="blog-date-categori">
-                                        <ul>
-                                            <li>June 27, 2018</li>
-                                            <li><a href="#" title="Posts by boighor" rel="author">boighor</a></li>
-                                        </ul>
-                                    </div>
                                 </div>
                                 <div class="post_content">
                                     {!! $service->description !!}

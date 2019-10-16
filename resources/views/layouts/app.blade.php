@@ -1,6 +1,15 @@
 <!doctype html>
-<html class="no-js" lang="zxx">
+<html class="no-js" lang="vi">
 <head>
+    <!-- Global site tag (gtag.js) - Google Analytics -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id={{ env('GOOGLE_ANALYTICS') }}"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
+
+        gtag('config', '{{ env('GOOGLE_ANALYTICS') }}');
+    </script>
     <meta charset="utf-8">
     <meta http-equiv="x-ua-compatible" content="ie=edge">
     <title>@yield('title')</title>
@@ -11,17 +20,14 @@
     <link rel="apple-touch-icon" href="{{asset('images/icon.png')}}">
 
     <!-- Google font (font-family: 'Roboto', sans-serif; Poppins ; Satisfy) -->
-    <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,400,600,700,800" rel="stylesheet">
-    <link href="https://fonts.googleapis.com/css?family=Poppins:300,300i,400,400i,500,600,600i,700,700i,800" rel="stylesheet">
-    <link href="https://fonts.googleapis.com/css?family=Roboto:100,300,400,500,700,900" rel="stylesheet">
 
     <!-- Stylesheets -->
-{{--    <link rel="stylesheet" href="{{asset('css/bootstrap.min.css')}}">--}}
-{{--    <link rel="stylesheet" href="{{asset('css/plugins.css')}}">--}}
-{{--    <link rel="stylesheet" href="{{asset('style.css')}}">--}}
+    <link rel="stylesheet" href="{{asset('css/bootstrap.min.css')}}">
+    <link rel="stylesheet" href="{{asset('css/plugins.css')}}">
+    <link rel="stylesheet" href="{{asset('style.css')}}">
     <!-- Cusom css -->
-{{--    <link rel="stylesheet" href="{{asset('css/custom.css')}}">--}}
-    <link rel="stylesheet" href="{{asset('css/bundle.min.css')}}">
+    <link rel="stylesheet" href="{{asset('css/custom.css')}}">
+{{--    <link rel="stylesheet" href="{{asset('css/bundle.min.css')}}">--}}
     <!-- Modernizer js -->
 {{--    <script src="{{asset('js/vendor/modernizr-3.5.0.min.js')}}"></script>--}}
     @yield('jsonLd')
@@ -49,7 +55,7 @@
                         <ul class="meninmenu d-flex justify-content-start">
                             @foreach($menu as $key => $item)
                                 <li class="nav-item" data-toggle="modal" data-target="#modalMenu_{{$item->id}}">
-                                    <a href="javascript:void(0)" class="nav-link">{{$item->name}}</a>
+                                    <a href="javascript:void(0)" class="nav-link" aria-label="danh mục sản phẩm">{{$item->name}}</a>
                                 </li>
                             @endforeach
                             <li><a href="/dich-vu" class="nav-link">Dịch vụ</a></li>
@@ -64,7 +70,7 @@
                         <ul class="meninmenu">
                             @foreach($menu as $key => $item)
                                 <li class="nav-item" data-toggle="modal" data-target="#modalMenu_{{$item->id}}">
-                                    <a href="javascript:void(0)" class="nav-link">{{$item->name}}</a>
+                                    <a href="javascript:void(0)" class="nav-link" aria-label="danh mục sản phẩm">{{$item->name}}</a>
                                 </li>
                             @endforeach
                         </ul>
@@ -94,11 +100,11 @@
                             </div>
                             <div class="footer__content">
                                 <ul class="social__net social__net--2 d-flex justify-content-center">
-                                    <li><a href="#"><i class="bi bi-facebook"></i></a></li>
-                                    <li><a href="#"><i class="bi bi-google"></i></a></li>
-                                    <li><a href="#"><i class="bi bi-twitter"></i></a></li>
-                                    <li><a href="#"><i class="bi bi-linkedin"></i></a></li>
-                                    <li><a href="#"><i class="bi bi-youtube"></i></a></li>
+                                    <li><a href="#" aria-label="Read more about Seminole tax hike"><i class="bi bi-facebook"></i></a></li>
+                                    <li><a href="#" aria-label="Read more about Seminole tax hike"><i class="bi bi-google"></i></a></li>
+                                    <li><a href="#" aria-label="Read more about Seminole tax hike"><i class="bi bi-twitter"></i></a></li>
+                                    <li><a href="#" aria-label="Read more about Seminole tax hike"><i class="bi bi-linkedin"></i></a></li>
+                                    <li><a href="#" aria-label="Read more about Seminole tax hike"><i class="bi bi-youtube"></i></a></li>
                                 </ul>
                             </div>
                         </div>
@@ -149,12 +155,12 @@
 <!-- //Main wrapper -->
 
 <!-- JS Files -->
-{{--<script src="{{asset('js/vendor/jquery-3.2.1.min.js')}}"></script>--}}
-{{--<script src="{{asset('js/popper.min.js')}}"></script>--}}
-{{--<script src="{{asset('js/bootstrap.min.js')}}"></script>--}}
-{{--<script src="{{asset('js/plugins.js')}}"></script>--}}
-{{--<script src="{{asset('js/active.js')}}"></script>--}}
-{{--<script src="{{asset('js/lazyload.js')}}"></script>--}}
-<script src="{{asset('js/bundle.min.js')}}"></script>
+<script src="{{asset('js/vendor/jquery-3.4.1.min.js')}}"></script>
+<script src="{{asset('js/popper.min.js')}}"></script>
+<script src="{{asset('js/bootstrap.min.js')}}"></script>
+<script src="{{asset('js/plugins.js')}}"></script>
+<script src="{{asset('js/active.js')}}"></script>
+<script src="{{asset('js/lazyload.js')}}"></script>
+{{--<script src="{{asset('js/bundle.min.js')}}"></script>--}}
 </body>
 </html>
