@@ -10,6 +10,19 @@
     font-size: 1.7em;
 }
 
+.blog-page {
+    padding-bottom: 2em;
+    border-bottom: 2px solid;
+}
+
+.blog-page .page__header h1 {
+    font-size: 2em;
+}
+
+.post_content h2 {
+    font-size: 1.4em;
+}
+
 .carousel {
     padding-top: 6em;
 }

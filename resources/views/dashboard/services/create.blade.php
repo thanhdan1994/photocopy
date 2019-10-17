@@ -21,7 +21,7 @@
                 <label class="form-check-label">
                     <input type="checkbox" class="form-check-input" name="status" />Kích hoạt
                 </label>
-                <label class="form-check-label">
+                <label class="form-check-label ml-5">
                     <input type="checkbox" class="form-check-input" name="type">Là dịch vụ
                 </label>
             </div>

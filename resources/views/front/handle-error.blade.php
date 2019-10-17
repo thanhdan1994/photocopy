@@ -1,7 +1,7 @@
 @extends('layouts.app')
-@section('title', 'Dịch vụ sữa chữa máy photocopy, cho thuê cho máy photocopy, bán máy photocopy giá rẻ nhanh chóng')
+@section('title', 'Lỗi thường gặp khi sử dụng máy photocopy, máy in...')
 @section('metaName')
-    <meta name="description" content="Dịch vụ sữa chữa máy photocopy, cho thuê cho máy photocopy, bán máy photocopy giá rẻ nhanh chóng" />
+    <meta name="description" content="Lỗi thường gặp khi sử dụng máy photocopy, máy in..." />
 @endsection
 @section('content')
     <!-- Start Bradcaump area -->
@@ -16,13 +16,25 @@
                 <div class="col-lg-9 col-12">
                     <div class="blog-page">
                         <div class="page__header">
-                            <h2>Danh sách dịch vụ của chúng tôi</h2>
+                            <h1>Lỗi thường gặp của máy in, máy photocopy.</h1>
                         </div>
                         @foreach($services as $key => $service)
                             <!-- Start Single Post -->
-                            @include('front.blog-item', ['blog' => $service])
+                            @include('front.handle-error-item', ['blog' => $service])
                             <!-- End Single Post -->
                         @endforeach
+                    </div>
+                    <div class="wn__related__product">
+                        <h2 class="title__be--2">Sản phẩm nổi bật</h2>
+                        <div class="row mt--60">
+                            <div class="productcategory__slide--2 arrows_style owl-carousel owl-theme">
+                            @foreach($productsPrior as $key => $product)
+                                <!-- Start Single Product -->
+                                @include('front.product-item', compact('product'))
+                                <!-- Start Single Product -->
+                                @endforeach
+                            </div>
+                        </div>
                     </div>
                 </div>
                 <div class="col-lg-3 col-12 md-mt-40 sm-mt-40">

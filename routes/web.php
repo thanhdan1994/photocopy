@@ -17,11 +17,11 @@ use Carbon\Carbon;
 // route front
 Route::get('/', 'HomeController@index');
 Route::get('/dich-vu', 'ServiceController@index');
+Route::get('/dich-vu/{slug}.html', 'ServiceController@show');
+Route::get('/xu-ly-su-co', 'ServiceController@handleError');
+Route::get('/xu-ly-su-co/{slug}.html', 'ServiceController@showHandleError');
 Route::get('/tim-kiem', 'ProductController@search');
 Route::get('/gioi-thieu.html', 'HomeController@introduce');
-Route::get('/chia-se-tu-van', 'HomeController@share');
-Route::get('/chia-se-tu-van/{slug}.html', 'HomeController@shareShow');
-Route::get('/dich-vu/{slug}.html', 'ServiceController@show');
 Route::get('/{slugParent}/{id}.html', 'ProductController@productsByRootCategory');
 Route::get('/{slugParent}/{slugChild}/{id}.html', 'ProductController@sellByCategory');
 Route::get('/{slugCategory}/chi-tiet/{slug}/pro-{id}.html', 'ProductController@show');

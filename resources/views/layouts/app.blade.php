@@ -16,18 +16,18 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     @yield('metaName')
     <!-- Favicons -->
-    <link rel="shortcut icon" href="{{asset('images/favicon.ico')}}">
-    <link rel="apple-touch-icon" href="{{asset('images/icon.png')}}">
+{{--    <link rel="shortcut icon" href="{{asset('images/favicon.ico')}}">--}}
+{{--    <link rel="apple-touch-icon" href="{{asset('images/icon.png')}}">--}}
 
     <!-- Google font (font-family: 'Roboto', sans-serif; Poppins ; Satisfy) -->
 
     <!-- Stylesheets -->
-    <link rel="stylesheet" href="{{asset('css/bootstrap.min.css')}}">
-    <link rel="stylesheet" href="{{asset('css/plugins.css')}}">
-    <link rel="stylesheet" href="{{asset('style.css')}}">
+{{--    <link rel="stylesheet" href="{{asset('css/bootstrap.min.css')}}">--}}
+{{--    <link rel="stylesheet" href="{{asset('css/plugins.css')}}">--}}
+{{--    <link rel="stylesheet" href="{{asset('style.css')}}">--}}
     <!-- Cusom css -->
-    <link rel="stylesheet" href="{{asset('css/custom.css')}}">
-{{--    <link rel="stylesheet" href="{{asset('css/bundle.min.css')}}">--}}
+{{--    <link rel="stylesheet" href="{{asset('css/custom.css')}}">--}}
+    <link rel="stylesheet" href="{{asset('css/bundle.min.css')}}">
     <!-- Modernizer js -->
 {{--    <script src="{{asset('js/vendor/modernizr-3.5.0.min.js')}}"></script>--}}
     @yield('jsonLd')
@@ -58,7 +58,8 @@
                                     <a href="javascript:void(0)" class="nav-link" aria-label="danh mục sản phẩm">{{$item->name}}</a>
                                 </li>
                             @endforeach
-                            <li><a href="/dich-vu" class="nav-link">Dịch vụ</a></li>
+                            <li class="nav-item"><a href="/xu-ly-su-co" class="nav-link">Xử lý sự cố</a></li>
+                            <li class="nav-item"><a href="/dich-vu" class="nav-link">Dịch vụ</a></li>
                         </ul>
                     </nav>
                 </div>
@@ -73,6 +74,8 @@
                                     <a href="javascript:void(0)" class="nav-link" aria-label="danh mục sản phẩm">{{$item->name}}</a>
                                 </li>
                             @endforeach
+                            <li class="nav-item"><a href="/xu-ly-su-co" class="nav-link">Xử lý sự cố</a></li>
+                            <li class="nav-item"><a href="/dich-vu" class="nav-link">Dịch vụ</a></li>
                         </ul>
                     </nav>
                 </div>
@@ -124,7 +127,7 @@
                     </div>
                     <div class="col-lg-6 col-md-6 col-sm-12">
                         <div class="payment text-right">
-                            <img src="{{asset('images/icons/payment.png')}}" alt="" />
+                            <img src="{{asset('images/icons/gov.webp')}}" alt="" />
                         </div>
                     </div>
                 </div>
@@ -155,12 +158,12 @@
 <!-- //Main wrapper -->
 
 <!-- JS Files -->
-<script src="{{asset('js/vendor/jquery-3.4.1.min.js')}}"></script>
-<script src="{{asset('js/popper.min.js')}}"></script>
-<script src="{{asset('js/bootstrap.min.js')}}"></script>
-<script src="{{asset('js/plugins.js')}}"></script>
-<script src="{{asset('js/active.js')}}"></script>
-<script src="{{asset('js/lazyload.js')}}"></script>
-{{--<script src="{{asset('js/bundle.min.js')}}"></script>--}}
+{{--<script src="{{asset('js/vendor/jquery-3.4.1.min.js')}}"></script>--}}
+{{--<script src="{{asset('js/popper.min.js')}}"></script>--}}
+{{--<script src="{{asset('js/bootstrap.min.js')}}"></script>--}}
+{{--<script src="{{asset('js/plugins.js')}}"></script>--}}
+{{--<script src="{{asset('js/active.js')}}"></script>--}}
+{{--<script src="{{asset('js/lazyload.js')}}"></script>--}}
+<script src="{{asset('js/bundle.min.js')}}"></script>
 </body>
 </html>

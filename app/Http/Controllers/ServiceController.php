@@ -28,4 +28,19 @@ class ServiceController extends Controller
         $services = $this->serviceRepo->getPosts(1, 10, Service::IS_SERVICE);
         return view('front.services', compact('services', 'productsPrior'));
     }
+
+    public function handleError()
+    {
+        $productsPrior = $this->productRepo->getProductsByPrior(1, 6, false, [], 'updated_at');
+        $services = $this->serviceRepo->getPosts(1, 10, Service::IS_SHARE_INFORMATION);
+        return view('front.handle-error', compact('services', 'productsPrior'));
+    }
+
+    public function showHandleError($slug)
+    {
+        $service = $this->serviceRepo->getPostServiceDetailBySlug($slug);
+        $productsPrior = $this->productRepo->getProductsByPrior(1, 6, false, [], 'updated_at');
+        $services = $this->serviceRepo->getPosts(1, 50, Service::IS_SHARE_INFORMATION, $service->id);
+        return view('front.handle-error.detail', compact('service', 'services', 'productsPrior'));
+    }
 }
