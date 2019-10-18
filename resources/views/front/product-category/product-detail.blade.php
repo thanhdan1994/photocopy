@@ -165,13 +165,22 @@
                             <!-- End Single Tab Content -->
                         </div>
                     </div>
-                    <div class="wn__related__product pt--80 pb--50">
+                </div>
+                <div class="col-lg-3 col-12 md-mt-40 sm-mt-40">
+                    <div class="wn__sidebar">
+                        <!-- Start Single Widget -->
+                        @include('front.block.aside-product', compact('productsPrior'))
+                        <!-- End Single Widget -->
+                    </div>
+                </div>
+                <div class="col-12">
+                    <div class="wn__related__product">
                         <div class="section__title text-center">
-                            <h2 class="title__be--2">Các sản phẩm khác</h2>
+                            <h2 class="title__be--2">Sản phẩm được quan tâm nhiều nhất</h2>
                         </div>
                         <div class="row mt--60">
-                            <div class="productcategory__slide--2 arrows_style owl-carousel owl-theme">
-                                @foreach($products as $key => $product)
+                            <div class="furniture--4 border--round arrows_style owl-carousel owl-theme">
+                                @foreach($productsPrior as $key => $product)
                                     <!-- Start Single Product -->
                                     @include('front.product-item', compact('product'))
                                     <!-- Start Single Product -->
@@ -181,24 +190,17 @@
                     </div>
                     <div class="wn__related__product">
                         <div class="section__title text-center">
-                            <h2 class="title__be--2">Sản phẩm được quan tâm nhiều nhất</h2>
+                            <h2 class="title__be--2">Các sản phẩm khác</h2>
                         </div>
                         <div class="row mt--60">
-                            <div class="productcategory__slide--2 arrows_style owl-carousel owl-theme">
-                                @foreach($productsPrior as $key => $product)
-                                    <!-- Start Single Product -->
-                                    @include('front.product-item', compact('product'))
-                                    <!-- Start Single Product -->
+                            <div class="furniture--4 border--round arrows_style owl-carousel owl-theme">
+                            @foreach($products as $key => $product)
+                                <!-- Start Single Product -->
+                                @include('front.product-item', compact('product'))
+                                <!-- Start Single Product -->
                                 @endforeach
                             </div>
                         </div>
-                    </div>
-                </div>
-                <div class="col-lg-3 col-12 md-mt-40 sm-mt-40">
-                    <div class="wn__sidebar">
-                        <!-- Start Single Widget -->
-                        @include('front.block.aside-product', compact('productsPrior'))
-                        <!-- End Single Widget -->
                     </div>
                 </div>
             </div>

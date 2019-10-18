@@ -2,16 +2,17 @@
 <html class="no-js" lang="vi">
 <head>
     <!-- Global site tag (gtag.js) - Google Analytics -->
-    <script async src="https://www.googletagmanager.com/gtag/js?id={{ env('GOOGLE_ANALYTICS') }}"></script>
-    <script>
-        window.dataLayer = window.dataLayer || [];
-        function gtag(){dataLayer.push(arguments);}
-        gtag('js', new Date());
+{{--    <script async src="https://www.googletagmanager.com/gtag/js?id={{ env('GOOGLE_ANALYTICS') }}"></script>--}}
+{{--    <script>--}}
+{{--        window.dataLayer = window.dataLayer || [];--}}
+{{--        function gtag(){dataLayer.push(arguments);}--}}
+{{--        gtag('js', new Date());--}}
 
-        gtag('config', '{{ env('GOOGLE_ANALYTICS') }}');
-    </script>
+{{--        gtag('config', '{{ env('GOOGLE_ANALYTICS') }}');--}}
+{{--    </script>--}}
     <meta charset="utf-8">
     <meta http-equiv="x-ua-compatible" content="ie=edge">
+    <link rel="icon" type="image/x-icon" href="{{asset('favicon.ico')}}" />
     <title>@yield('title')</title>
     <meta name="viewport" content="width=device-width, initial-scale=1">
     @yield('metaName')
@@ -25,7 +26,6 @@
 {{--    <link rel="stylesheet" href="{{asset('css/bootstrap.min.css')}}">--}}
 {{--    <link rel="stylesheet" href="{{asset('css/plugins.css')}}">--}}
 {{--    <link rel="stylesheet" href="{{asset('style.css')}}">--}}
-    <!-- Cusom css -->
 {{--    <link rel="stylesheet" href="{{asset('css/custom.css')}}">--}}
     <link rel="stylesheet" href="{{asset('css/bundle.min.css')}}">
     <!-- Modernizer js -->
@@ -46,7 +46,7 @@
                 <div class="col-md-6 col-sm-6 col-6 col-lg-2">
                     <div class="logo">
                         <a href="/">
-                            <img src="{{asset('images/logo/logo.png')}}" alt="logo images">
+                            <img class="logo-page" src="{{asset('logo.webp')}}" alt="logo images">
                         </a>
                     </div>
                 </div>
@@ -97,7 +97,7 @@
                         <div class="footer__widget footer__menu">
                             <div class="ft__logo">
                                 <a href="/">
-                                    <img src="{{asset('images/logo/3.png')}}" alt="logo">
+                                    <img class="logo-page" src="{{asset('logo.webp')}}" alt="logo">
                                 </a>
                                 <p>Cung cấp máy photocopy, cho thuê máy photocopy, sữa chữa máy in, nạp mực máy in, máy photocopy tận nơi giá rẻ nhanh chóng</p>
                             </div>
@@ -158,12 +158,12 @@
 <!-- //Main wrapper -->
 
 <!-- JS Files -->
-{{--<script src="{{asset('js/vendor/jquery-3.4.1.min.js')}}"></script>--}}
-{{--<script src="{{asset('js/popper.min.js')}}"></script>--}}
-{{--<script src="{{asset('js/bootstrap.min.js')}}"></script>--}}
-{{--<script src="{{asset('js/plugins.js')}}"></script>--}}
-{{--<script src="{{asset('js/active.js')}}"></script>--}}
-{{--<script src="{{asset('js/lazyload.js')}}"></script>--}}
-<script src="{{asset('js/bundle.min.js')}}"></script>
+<script src="{{asset('js/vendor/jquery-3.4.1.min.js')}}"></script>
+<script src="{{asset('js/popper.min.js')}}"></script>
+<script src="{{asset('js/bootstrap.min.js')}}"></script>
+<script src="{{asset('js/plugins.js')}}"></script>
+<script src="{{asset('js/active.js')}}"></script>
+<script src="{{asset('js/lazyload.js')}}"></script>
+{{--<script src="{{asset('js/bundle.min.js')}}"></script>--}}
 </body>
 </html>

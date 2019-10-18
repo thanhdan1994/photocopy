@@ -31,7 +31,7 @@ mix
             'public/css/plugins/fotorama.css',
             'public/css/plugins/simple-line-icons.css',
             'public/css/plugins/jquery-ui.min.css',
-            'public/css/plugins/lightbox.css',
+            // 'public/css/plugins/lightbox.css',
             'public/style.css',
             'public/css/custom.css'
         ],

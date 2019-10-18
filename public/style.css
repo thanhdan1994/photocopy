@@ -2137,7 +2137,6 @@ Header Styles
 .header__area.sticky__header.is-sticky .logo {
   height: 40px;
   line-height: 55px;
-  width: 85px;
 }
 .header__box .header__area.sticky__header.is-sticky {
   padding-left: 80px;

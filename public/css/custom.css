@@ -6,6 +6,11 @@
 	Note: This is custom css. All custom styles (user styles) declare here.
 
 **********************************************************************************/
+
+.logo-page {
+    width: 230px;
+}
+
 .page-blog-details .post_wrapper h1 {
     font-size: 1.7em;
 }
