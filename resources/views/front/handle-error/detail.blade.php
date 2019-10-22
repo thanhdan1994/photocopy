@@ -3,6 +3,21 @@
 @section('metaName')
     <meta name="description" content="{{$service->excerpt}}" />
 @endsection
+@section('jsonLd')
+    <script type="application/ld+json">
+    {
+        "@context": "http://schema.org",
+        "@type": "Blog",
+        "name": "<?=$service->name?>",
+        "url": "<?=request()->url()?>",
+        "description": "<?=$service->excerpt?>",
+        "publisher": {
+            "@type": "Organization",
+            "name": "Hoang Lai"
+        }
+    }
+    </script>
+@endsection
 @section('content')
     <div class="page-blog-details section-padding--lg bg--white">
         <!-- Start Bradcaump area -->
@@ -14,7 +29,7 @@
                         Xử lý sự cố
                     </a>
                 </li>
-                <li class="breadcrumb-item">
+                <li class="breadcrumb-item active">
                     {{$service->name}}
                 </li>
             </ol>

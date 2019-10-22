@@ -125,7 +125,9 @@
                                         <div class="product-infomation">
                                             <ul>
                                                 @foreach(json_decode($product->data) as $key => $item)
+                                                    @if($key < 8)
                                                     <li>{{$item}}</li>
+                                                    @endif
                                                 @endforeach
                                             </ul>
                                         </div>

@@ -3,6 +3,17 @@
 @section('metaName')
     <meta name="description" content="Dịch vụ sữa chữa máy photocopy, cho thuê cho máy photocopy, bán máy photocopy giá rẻ nhanh chóng" />
 @endsection
+@section('jsonLd')
+    <script type="application/ld+json">
+    {
+        "@context": "http://schema.org",
+        "@type": "WebSite",
+        "url": "<?=request()->url()?>",
+        "name": "Hoang Lai - Dịch vụ sữa chữa máy photocopy, cho thuê cho máy photocopy, bán máy photocopy giá rẻ nhanh chóng",
+        "description": "Hoang Lai là công ty hàng đầu về lĩnh vực máy photocopy, hiện công ty đang phân phối các dòng máy photocopy Ricoh với giá tốt, kèm theo các dịch vụ cho thuê máy photocopy uy tín, chất lượng."
+    }
+    </script>
+@endsection
 @section('content')
     <!-- Start Bradcaump area -->
     <div class="pt--90">

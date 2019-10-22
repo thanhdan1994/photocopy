@@ -8,7 +8,15 @@
 **********************************************************************************/
 
 .logo-page {
-    width: 230px;
+    width: 150px;
+}
+
+.carousel-control-prev,.carousel-control-next {
+    padding-top: 6em;
+}
+
+.footer__widget .logo-page {
+    width: 250px;
 }
 
 .page-blog-details .post_wrapper h1 {
@@ -161,4 +169,8 @@
 .rating--custom label:hover:after,
 .rating--custom input:checked ~ label:after {
     opacity: 1;
+}
+
+.post-wrapper.d-flex .thumb img {
+    min-width: 80px;
 }

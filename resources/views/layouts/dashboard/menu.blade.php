@@ -25,5 +25,11 @@
                 <a class="dropdown-item" href="{{route('admin.categories.create')}}">Thêm chuyên mục mới</a>
             </div>
         </li>
+        <li class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle" id="navbardrop" data-toggle="dropdown">Tuỳ chỉnh</a>
+            <div class="dropdown-menu">
+                <a class="dropdown-item" href="{{route('admin.options.index')}}">Danh sách</a>
+            </div>
+        </li>
     </ul>
 </nav>

@@ -2,26 +2,33 @@
 
 @section('title', 'Cho thuê máy in, bán máy in, sữa chữa máy in nhanh chóng giá rẻ tại Tp.HCM')
 @section('metaName')
-    <meta name="description" content="Chí Vinh là công ty hàng đầu về lĩnh vực máy photocopy, hiện công ty đang phân phối các dòng máy photocopy Ricoh với giá tốt, kèm theo các dịch vụ cho thuê máy photocopy uy tín, chất lượng." />
+    <meta name="description" content="Hoang Lai là công ty hàng đầu về lĩnh vực máy photocopy, hiện công ty đang phân phối các dòng máy photocopy Ricoh với giá tốt, kèm theo các dịch vụ cho thuê máy photocopy uy tín, chất lượng." />
 @endsection
-
+@section('jsonLd')
+    <script type="application/ld+json">
+    {
+        "@context": "http://schema.org",
+        "@type": "WebSite",
+        "url": "<?=request()->url()?>",
+        "name": "Hoang Lai - Cho thuê máy in, bán máy in, sữa chữa máy in nhanh chóng giá rẻ tại Tp.HCM",
+        "description": "Hoang Lai là công ty hàng đầu về lĩnh vực máy photocopy, hiện công ty đang phân phối các dòng máy photocopy Ricoh với giá tốt, kèm theo các dịch vụ cho thuê máy photocopy uy tín, chất lượng."
+    }
+    </script>
+@endsection
 @section('content')
     <div id="carouselExampleControls" class="carousel slide" data-ride="carousel">
         <div class="carousel-inner">
             <div class="carousel-item active">
-                <img class="d-block w-100" src="http://lorempixel.com/1280/480/city" />
-{{--                <img class="d-block w-100" src="{{asset('images/banner-home/banner-1.webp')}}"--}}
-{{--                     alt="Cho thuê máy photocopy">--}}
+                <img class="d-block w-100" src="{{asset('images/banner-home/cho-thue-may-photocopy-2.webp')}}" alt="Cho thuê máy photocopy" />
             </div>
             <div class="carousel-item">
-                <img class="d-block w-100" src="http://lorempixel.com/1280/480/food" />
-{{--                <img class="d-block w-100" src="{{asset('images/banner-home/banner-2.webp')}}"--}}
-{{--                     alt="Sửa chữa máy photocopy, máy in tận nơi tại TPHCM.">--}}
+                <img class="d-block w-100" src="{{asset('images/banner-home/cho-thue-may-photocopy-1.webp')}}" alt="Sửa chữa máy photocopy, máy in tận nơi tại TPHCM." />
             </div>
             <div class="carousel-item">
-                <img class="d-block w-100" src="http://lorempixel.com/1280/480/nature" />
-{{--                <img class="d-block w-100" src="{{asset('images/banner-home/banner-3.webp')}}"--}}
-{{--                     alt="Máy in màu chất lượng bản in đẹp">--}}
+                <img class="d-block w-100" src="{{asset('images/banner-home/cung-cap-may-photocopy-may-in.webp')}}" alt="Máy in màu chất lượng bản in đẹp" />
+            </div>
+            <div class="carousel-item">
+                <img class="d-block w-100" src="{{asset('images/banner-home/nap-muc-may-photocopy-may-in.webp')}}" alt="nạp mực máy photocopy, máy in tận nơi tại tphcm." />
             </div>
         </div>
         <a class="carousel-control-prev" href="#carouselExampleControls" role="button" data-slide="prev">

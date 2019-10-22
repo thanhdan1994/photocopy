@@ -46,7 +46,7 @@
                 <div class="col-md-6 col-sm-6 col-6 col-lg-2">
                     <div class="logo">
                         <a href="/">
-                            <img class="logo-page" src="{{asset('logo.webp')}}" alt="logo images">
+                            <img class="logo-page" src="{{asset('logo.webp')}}" alt="Công ty TNHH giải pháp in Hoang Lai">
                         </a>
                     </div>
                 </div>
@@ -99,7 +99,7 @@
                                 <a href="/">
                                     <img class="logo-page" src="{{asset('logo.webp')}}" alt="logo">
                                 </a>
-                                <p>Cung cấp máy photocopy, cho thuê máy photocopy, sữa chữa máy in, nạp mực máy in, máy photocopy tận nơi giá rẻ nhanh chóng</p>
+                                <p>{{$descriptionFooter}}</p>
                             </div>
                             <div class="footer__content">
                                 <ul class="social__net social__net--2 d-flex justify-content-center">
@@ -121,7 +121,7 @@
                     <div class="col-lg-6 col-md-6 col-sm-12">
                         <div class="copyright">
                             <div class="copy__right__inner text-left">
-                                <p>Liên hệ: <i class="fa fa-copyright"></i> <a href="mailto:thanhdan26081994@gmail.com">thanhdan26081994@gmail.com</a> hoặc 0982390731</p>
+                                <p>Liên hệ: <i class="fa fa-copyright"></i> <a href="mailto:thanhdan26081994@gmail.com">{{$emailGlobal}}</a> hoặc {{$phoneGlobal}}</p>
                             </div>
                         </div>
                     </div>
@@ -158,12 +158,12 @@
 <!-- //Main wrapper -->
 
 <!-- JS Files -->
-<script src="{{asset('js/vendor/jquery-3.4.1.min.js')}}"></script>
-<script src="{{asset('js/popper.min.js')}}"></script>
-<script src="{{asset('js/bootstrap.min.js')}}"></script>
-<script src="{{asset('js/plugins.js')}}"></script>
-<script src="{{asset('js/active.js')}}"></script>
-<script src="{{asset('js/lazyload.js')}}"></script>
-{{--<script src="{{asset('js/bundle.min.js')}}"></script>--}}
+{{--<script src="{{asset('js/vendor/jquery-3.4.1.min.js')}}"></script>--}}
+{{--<script src="{{asset('js/popper.min.js')}}"></script>--}}
+{{--<script src="{{asset('js/bootstrap.min.js')}}"></script>--}}
+{{--<script src="{{asset('js/plugins.js')}}"></script>--}}
+{{--<script src="{{asset('js/active.js')}}"></script>--}}
+{{--<script src="{{asset('js/lazyload.js')}}"></script>--}}
+<script src="{{asset('js/bundle.min.js')}}"></script>
 </body>
 </html>

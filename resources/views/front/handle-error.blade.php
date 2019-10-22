@@ -3,10 +3,21 @@
 @section('metaName')
     <meta name="description" content="Lỗi thường gặp khi sử dụng máy photocopy, máy in..." />
 @endsection
+@section('jsonLd')
+    <script type="application/ld+json">
+    {
+        "@context": "http://schema.org",
+        "@type": "WebSite",
+        "url": "<?=request()->url()?>",
+        "name": "Hoang Lai - Lỗi thường gặp khi sử dụng máy photocopy, máy in...",
+        "description": "Hoang Lai là công ty hàng đầu về lĩnh vực máy photocopy, hiện công ty đang phân phối các dòng máy photocopy Ricoh với giá tốt, kèm theo các dịch vụ cho thuê máy photocopy uy tín, chất lượng."
+    }
+    </script>
+@endsection
 @section('content')
     <!-- Start Bradcaump area -->
     <div class="pt--90">
-        <img src="{{asset('images/bg/dich-vu.webp')}}" alt="dịch vụ cho thuê máy photocopy, sửa chữa máy in tận nơi" />
+        <img src="{{asset('images/bg/xu-ly-su-co.webp')}}" alt="dịch vụ cho thuê máy photocopy, sửa chữa máy in tận nơi" />
     </div>
     <!-- End Bradcaump area -->
     <!-- Start Blog Area -->

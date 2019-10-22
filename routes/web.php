@@ -42,7 +42,8 @@ Route::group(['prefix' => 'admin', 'middleware' => ['employee'], 'as' => 'admin.
             'services' => 'ServiceController',
             'introduces' => 'IntroduceController',
             'products' => 'ProductController',
-            'categories' => 'CategoryController'
+            'categories' => 'CategoryController',
+            'options' => 'OptionController'
         ]);
         Route::get('/create-sitemap', function () {
             $sitemap = SitemapGenerator::create(env('APP_URL'))
