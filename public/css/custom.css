@@ -174,3 +174,7 @@
 .post-wrapper.d-flex .thumb img {
     min-width: 80px;
 }
+
+div.productcategory__slide--2, div.furniture--4 {
+    touch-action: none;
+}

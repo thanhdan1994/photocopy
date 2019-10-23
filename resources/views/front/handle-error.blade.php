@@ -17,7 +17,11 @@
 @section('content')
     <!-- Start Bradcaump area -->
     <div class="pt--90">
-        <img src="{{asset('images/bg/xu-ly-su-co.webp')}}" alt="dịch vụ cho thuê máy photocopy, sửa chữa máy in tận nơi" />
+        <picture>
+            <source type="image/webp" srcset="{{asset('images/banner/xu-ly-su-co.webp')}}">
+            <source type="image/jpeg" srcset="{{asset('images/banner/xu-ly-su-co.jpg')}}">
+            <img src="{{asset('images/banner/xu-ly-su-co.jpg')}}" alt="dịch vụ cho thuê máy photocopy, sửa chữa máy in tận nơi" />
+        </picture>
     </div>
     <!-- End Bradcaump area -->
     <!-- Start Blog Area -->

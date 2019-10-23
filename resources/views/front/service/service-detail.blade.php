@@ -41,7 +41,7 @@
                     <div class="blog-details content">
                         <article class="blog-post-details">
                             <div class="post-thumbnail">
-                                <img src="{{asset('uploads/'. $service->cover)}}" alt="blog images">
+                                <img src="{{asset('uploads/'. $service->cover)}}" alt="{{$service->name}}">
                             </div>
                             <div class="post_wrapper">
                                 <div class="post_header">

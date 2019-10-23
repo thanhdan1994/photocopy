@@ -2,34 +2,34 @@
 <html class="no-js" lang="vi">
 <head>
     <!-- Global site tag (gtag.js) - Google Analytics -->
-{{--    <script async src="https://www.googletagmanager.com/gtag/js?id={{ env('GOOGLE_ANALYTICS') }}"></script>--}}
-{{--    <script>--}}
-{{--        window.dataLayer = window.dataLayer || [];--}}
-{{--        function gtag(){dataLayer.push(arguments);}--}}
-{{--        gtag('js', new Date());--}}
+    {{--    <script async src="https://www.googletagmanager.com/gtag/js?id={{ env('GOOGLE_ANALYTICS') }}"></script>--}}
+    {{--    <script>--}}
+    {{--        window.dataLayer = window.dataLayer || [];--}}
+    {{--        function gtag(){dataLayer.push(arguments);}--}}
+    {{--        gtag('js', new Date());--}}
 
-{{--        gtag('config', '{{ env('GOOGLE_ANALYTICS') }}');--}}
-{{--    </script>--}}
+    {{--        gtag('config', '{{ env('GOOGLE_ANALYTICS') }}');--}}
+    {{--    </script>--}}
     <meta charset="utf-8">
     <meta http-equiv="x-ua-compatible" content="ie=edge">
     <link rel="icon" type="image/x-icon" href="{{asset('favicon.ico')}}" />
     <title>@yield('title')</title>
     <meta name="viewport" content="width=device-width, initial-scale=1">
     @yield('metaName')
-    <!-- Favicons -->
-{{--    <link rel="shortcut icon" href="{{asset('images/favicon.ico')}}">--}}
-{{--    <link rel="apple-touch-icon" href="{{asset('images/icon.png')}}">--}}
+<!-- Favicons -->
+    {{--    <link rel="shortcut icon" href="{{asset('images/favicon.ico')}}">--}}
+    {{--    <link rel="apple-touch-icon" href="{{asset('images/icon.png')}}">--}}
 
-    <!-- Google font (font-family: 'Roboto', sans-serif; Poppins ; Satisfy) -->
+<!-- Google font (font-family: 'Roboto', sans-serif; Poppins ; Satisfy) -->
 
     <!-- Stylesheets -->
-{{--    <link rel="stylesheet" href="{{asset('css/bootstrap.min.css')}}">--}}
-{{--    <link rel="stylesheet" href="{{asset('css/plugins.css')}}">--}}
-{{--    <link rel="stylesheet" href="{{asset('style.css')}}">--}}
-{{--    <link rel="stylesheet" href="{{asset('css/custom.css')}}">--}}
+    {{--    <link rel="stylesheet" href="{{asset('css/bootstrap.min.css')}}">--}}
+    {{--    <link rel="stylesheet" href="{{asset('css/plugins.css')}}">--}}
+    {{--    <link rel="stylesheet" href="{{asset('style.css')}}">--}}
+    {{--    <link rel="stylesheet" href="{{asset('css/custom.css')}}">--}}
     <link rel="stylesheet" href="{{asset('css/bundle.min.css')}}">
     <!-- Modernizer js -->
-{{--    <script src="{{asset('js/vendor/modernizr-3.5.0.min.js')}}"></script>--}}
+    {{--    <script src="{{asset('js/vendor/modernizr-3.5.0.min.js')}}"></script>--}}
     @yield('jsonLd')
 </head>
 <body>
@@ -46,7 +46,11 @@
                 <div class="col-md-6 col-sm-6 col-6 col-lg-2">
                     <div class="logo">
                         <a href="/">
-                            <img class="logo-page" src="{{asset('logo.webp')}}" alt="Công ty TNHH giải pháp in Hoang Lai">
+                            <picture>
+                                <source type="image/webp" srcset="{{asset('logo.webp')}}">
+                                <source type="image/png" srcset="{{asset('logo.png')}}">
+                                <img class="logo-page" src="{{asset('logo.png')}}" alt="Công ty TNHH giải pháp in Hoang Lai">
+                            </picture>
                         </a>
                     </div>
                 </div>
@@ -87,8 +91,8 @@
         </div>
     </header>
     <!-- //Header -->
-    @yield('content')
-    <!-- Footer Area -->
+@yield('content')
+<!-- Footer Area -->
     <footer id="wn__footer" class="footer__area bg__cat--8 brown--color">
         <div class="footer-static-top">
             <div class="container">
@@ -97,19 +101,15 @@
                         <div class="footer__widget footer__menu">
                             <div class="ft__logo">
                                 <a href="/">
-                                    <img class="logo-page" src="{{asset('logo.webp')}}" alt="logo">
+                                    <picture>
+                                        <source type="image/webp" srcset="{{asset('logo.webp')}}">
+                                        <source type="image/png" srcset="{{asset('logo.png')}}">
+                                        <img class="logo-page" src="{{asset('logo.png')}}" alt="Công ty TNHH giải pháp in Hoang Lai">
+                                    </picture>
                                 </a>
                                 <p>{{$descriptionFooter}}</p>
                             </div>
-                            <div class="footer__content">
-                                <ul class="social__net social__net--2 d-flex justify-content-center">
-                                    <li><a href="#" aria-label="Read more about Seminole tax hike"><i class="bi bi-facebook"></i></a></li>
-                                    <li><a href="#" aria-label="Read more about Seminole tax hike"><i class="bi bi-google"></i></a></li>
-                                    <li><a href="#" aria-label="Read more about Seminole tax hike"><i class="bi bi-twitter"></i></a></li>
-                                    <li><a href="#" aria-label="Read more about Seminole tax hike"><i class="bi bi-linkedin"></i></a></li>
-                                    <li><a href="#" aria-label="Read more about Seminole tax hike"><i class="bi bi-youtube"></i></a></li>
-                                </ul>
-                            </div>
+
                         </div>
                     </div>
                 </div>
@@ -127,7 +127,11 @@
                     </div>
                     <div class="col-lg-6 col-md-6 col-sm-12">
                         <div class="payment text-right">
-                            <img src="{{asset('images/icons/gov.webp')}}" alt="" />
+                            <picture>
+                                <source type="image/webp" srcset="{{asset('images/icons/gov.webp')}}">
+                                <source type="image/png" srcset="{{asset('images/icons/gov.png')}}">
+                                <img src="{{asset('images/icons/gov.png')}}" alt="Đã thông báo bộ công thương" />
+                            </picture>
                         </div>
                     </div>
                 </div>

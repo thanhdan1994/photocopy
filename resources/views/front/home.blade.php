@@ -19,16 +19,32 @@
     <div id="carouselExampleControls" class="carousel slide" data-ride="carousel">
         <div class="carousel-inner">
             <div class="carousel-item active">
-                <img class="d-block w-100" src="{{asset('images/banner-home/cho-thue-may-photocopy-2.webp')}}" alt="Cho thuê máy photocopy" />
+                <picture>
+                    <source type="image/webp" srcset="{{asset('images/banner/cho-thue-may-photocopy-2.webp')}}">
+                    <source type="image/jpeg" srcset="{{asset('images/banner/cho-thue-may-photocopy-2.jpg')}}">
+                    <img class="d-block w-100" src="{{asset('images/banner/cho-thue-may-photocopy-2.webp')}}" alt="Cho thuê máy photocopy" />
+                </picture>
             </div>
             <div class="carousel-item">
-                <img class="d-block w-100" src="{{asset('images/banner-home/cho-thue-may-photocopy-1.webp')}}" alt="Sửa chữa máy photocopy, máy in tận nơi tại TPHCM." />
+                <picture>
+                    <source type="image/webp" srcset="{{asset('images/banner/cho-thue-may-photocopy-1.webp')}}">
+                    <source type="image/jpeg" srcset="{{asset('images/banner/cho-thue-may-photocopy-1.jpg')}}">
+                    <img class="d-block w-100" src="{{asset('images/banner/cho-thue-may-photocopy-1.webp')}}" alt="Cho thuê máy photocopy" />
+                </picture>
             </div>
             <div class="carousel-item">
-                <img class="d-block w-100" src="{{asset('images/banner-home/cung-cap-may-photocopy-may-in.webp')}}" alt="Máy in màu chất lượng bản in đẹp" />
+                <picture>
+                    <source type="image/webp" srcset="{{asset('images/banner/cung-cap-may-photocopy-may-in.webp')}}">
+                    <source type="image/jpeg" srcset="{{asset('images/banner/cung-cap-may-photocopy-may-in.jpg')}}">
+                    <img class="d-block w-100" src="{{asset('images/banner/cung-cap-may-photocopy-may-in.jpg')}}" alt="cung cấp máy photocopy máy in chất lượng cao tại tphcm" />
+                </picture>
             </div>
             <div class="carousel-item">
-                <img class="d-block w-100" src="{{asset('images/banner-home/nap-muc-may-photocopy-may-in.webp')}}" alt="nạp mực máy photocopy, máy in tận nơi tại tphcm." />
+                <picture>
+                    <source type="image/webp" srcset="{{asset('images/banner/nap-muc-may-photocopy-may-in.webp')}}">
+                    <source type="image/jpeg" srcset="{{asset('images/banner/nap-muc-may-photocopy-may-in.jpg')}}">
+                    <img class="d-block w-100" src="{{asset('images/banner/nap-muc-may-photocopy-may-in.jpg')}}" alt="nạp mực máy photocopy máy in tại tphcm" />
+                </picture>
             </div>
         </div>
         <a class="carousel-control-prev" href="#carouselExampleControls" role="button" data-slide="prev">
@@ -53,10 +69,10 @@
             </div>
             <!-- Start Single Tab Content -->
             <div class="furniture--4 border--round arrows_style owl-carousel owl-theme row mt--50">
-                @foreach($products as $key => $product)
-                    <!-- Start Single Product -->
-                    @include('front.product-item', compact('product'))
-                    <!-- Start Single Product -->
+            @foreach($products as $key => $product)
+                <!-- Start Single Product -->
+                @include('front.product-item', compact('product'))
+                <!-- Start Single Product -->
                 @endforeach
             </div>
             <!-- End Single Tab Content -->
@@ -79,18 +95,18 @@
                     <div class="row">
                         <div class="col-lg-9 col-12">
                             <div class="blog-page">
-                                @foreach($services as $key => $service)
-                                    <!-- Start Single Post -->
-                                    @include('front.blog-item', ['blog' => $service])
-                                    <!-- End Single Post -->
+                            @foreach($services as $key => $service)
+                                <!-- Start Single Post -->
+                                @include('front.blog-item', ['blog' => $service])
+                                <!-- End Single Post -->
                                 @endforeach
                             </div>
                         </div>
                         <div class="col-lg-3 col-12 md-mt-40 sm-mt-40">
                             <div class="wn__sidebar">
                                 <!-- Start Single Widget -->
-                                @include('front.block.aside-product', compact('productsPrior'))
-                                <!-- End Single Widget -->
+                            @include('front.block.aside-product', compact('productsPrior'))
+                            <!-- End Single Widget -->
                             </div>
                         </div>
                     </div>
