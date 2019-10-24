@@ -23,10 +23,10 @@
 <!-- Google font (font-family: 'Roboto', sans-serif; Poppins ; Satisfy) -->
 
     <!-- Stylesheets -->
-    {{--    <link rel="stylesheet" href="{{asset('css/bootstrap.min.css')}}">--}}
-    {{--    <link rel="stylesheet" href="{{asset('css/plugins.css')}}">--}}
-    {{--    <link rel="stylesheet" href="{{asset('style.css')}}">--}}
-    {{--    <link rel="stylesheet" href="{{asset('css/custom.css')}}">--}}
+{{--        <link rel="stylesheet" href="{{asset('css/bootstrap.min.css')}}">--}}
+{{--        <link rel="stylesheet" href="{{asset('css/plugins.css')}}">--}}
+{{--        <link rel="stylesheet" href="{{asset('style.css')}}">--}}
+{{--        <link rel="stylesheet" href="{{asset('css/custom.css')}}">--}}
     <link rel="stylesheet" href="{{asset('css/bundle.min.css')}}">
     <!-- Modernizer js -->
     {{--    <script src="{{asset('js/vendor/modernizr-3.5.0.min.js')}}"></script>--}}

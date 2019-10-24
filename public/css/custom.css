@@ -178,3 +178,8 @@
 div.productcategory__slide--2, div.furniture--4 {
     touch-action: none;
 }
+
+.block-img-fluid .img-fluid {
+    height: auto;
+    width: 100%;
+}
