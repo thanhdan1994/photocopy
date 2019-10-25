@@ -67,7 +67,7 @@ Route::group(['prefix' => 'admin', 'middleware' => ['employee'], 'as' => 'admin.
             foreach ($services as $key => $item) {
                 $url = env('APP_URL') . '/dich-vu/' . $item->slug . '.html';
                 if (!$item->type) {
-                    $url = env('APP_URL') . '/xy-ly-su-co/' . $item->slug . '.html';
+                    $url = env('APP_URL') . '/xu-ly-su-co/' . $item->slug . '.html';
                 }
                 $sitemap->add(Url::create($url)
                     ->setLastModificationDate(Carbon::yesterday())
