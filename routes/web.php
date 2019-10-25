@@ -71,16 +71,16 @@ Route::group(['prefix' => 'admin', 'middleware' => ['employee'], 'as' => 'admin.
                 }
                 $sitemap->add(Url::create($url)
                     ->setLastModificationDate(Carbon::yesterday())
-                    ->setChangeFrequency(Url::CHANGE_FREQUENCY_MONTHLY)
-                    ->setPriority(0.1));
+                    ->setChangeFrequency(Url::CHANGE_FREQUENCY_DAILY)
+                    ->setPriority(0.8));
             }
             $products = \App\Product::where('status', 1)->get();
             foreach ($products as $key => $item) {
                 $url = env('APP_URL') . '/' . $item->category['slug'] . '/chi-tiet/' . $item['slug'] . '/pro-' . $item->id . '.html';
                 $sitemap->add(Url::create($url)
                     ->setLastModificationDate(Carbon::yesterday())
-                    ->setChangeFrequency(Url::CHANGE_FREQUENCY_MONTHLY)
-                    ->setPriority(0.1));
+                    ->setChangeFrequency(Url::CHANGE_FREQUENCY_DAILY)
+                    ->setPriority(0.8));
             }
 
 
