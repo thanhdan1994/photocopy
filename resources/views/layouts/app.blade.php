@@ -2,17 +2,17 @@
 <html class="no-js" lang="vi">
 <head>
     <!-- Global site tag (gtag.js) - Google Analytics -->
-    {{--    <script async src="https://www.googletagmanager.com/gtag/js?id={{ env('GOOGLE_ANALYTICS') }}"></script>--}}
-    {{--    <script>--}}
-    {{--        window.dataLayer = window.dataLayer || [];--}}
-    {{--        function gtag(){dataLayer.push(arguments);}--}}
-    {{--        gtag('js', new Date());--}}
+        <script async src="https://www.googletagmanager.com/gtag/js?id={{ env('GOOGLE_ANALYTICS') }}"></script>
+        <script>
+            window.dataLayer = window.dataLayer || [];
+            function gtag(){dataLayer.push(arguments);}
+            gtag('js', new Date());
 
-    {{--        gtag('config', '{{ env('GOOGLE_ANALYTICS') }}');--}}
-    {{--    </script>--}}
+            gtag('config', '{{ env('GOOGLE_ANALYTICS') }}');
+        </script>
     <meta charset="utf-8">
     <meta http-equiv="x-ua-compatible" content="ie=edge">
-    <link rel="icon" type="image/x-icon" href="{{asset('favicon.ico')}}" />
+    <link rel="icon" type="image/png" href="{{asset('favicon.png')}}" />
     <title>@yield('title')</title>
     <meta name="viewport" content="width=device-width, initial-scale=1">
     @yield('metaName')
@@ -31,6 +31,7 @@
     <!-- Modernizer js -->
     {{--    <script src="{{asset('js/vendor/modernizr-3.5.0.min.js')}}"></script>--}}
     @yield('jsonLd')
+    <meta name="google-site-verification" content="XE0UPcgosGHbnIHodV2jKI0yD0iQinWI6C2_c7PBynE" />
 </head>
 <body>
 <!--[if lte IE 9]>
