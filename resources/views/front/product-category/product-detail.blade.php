@@ -58,7 +58,7 @@
             "price": "<?=$product->price?>",
             "seller": {
               "@type": "Organization",
-              "name": "Công ty bla bla"
+              "name": "Công ty TNHH giải pháp in Hoang Lai"
             }
           }
         }
