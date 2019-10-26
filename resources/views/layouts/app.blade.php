@@ -108,7 +108,7 @@
                     <div class="col-lg-6 col-md-6 col-sm-12">
                         <div class="copyright">
                             <div class="copy__right__inner text-left">
-                                <p>Liên hệ: <i class="fa fa-copyright"></i> <a href="mailto:thanhdan26081994@gmail.com">{{$emailGlobal}}</a> hoặc {{$phoneGlobal}}</p>
+                                <p>Liên hệ: <i class="fa fa-copyright"></i> <a href="mailto:thanhdan26081994@gmail.com">{{$emailGlobal}}</a> hoặc <a href="callto:{{$phoneGlobal}}">{{$phoneGlobal}}</a></p>
                             </div>
                         </div>
                     </div>
