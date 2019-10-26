@@ -1,35 +1,21 @@
 <!doctype html>
 <html class="no-js" lang="vi">
 <head>
-    <!-- Global site tag (gtag.js) - Google Analytics -->
-        <script async src="https://www.googletagmanager.com/gtag/js?id={{ env('GOOGLE_ANALYTICS') }}"></script>
-        <script>
-            window.dataLayer = window.dataLayer || [];
-            function gtag(){dataLayer.push(arguments);}
-            gtag('js', new Date());
+    <script async src="https://www.googletagmanager.com/gtag/js?id={{ env('GOOGLE_ANALYTICS') }}"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
 
-            gtag('config', '{{ env('GOOGLE_ANALYTICS') }}');
-        </script>
+        gtag('config', '{{ env('GOOGLE_ANALYTICS') }}');
+    </script>
     <meta charset="utf-8">
     <meta http-equiv="x-ua-compatible" content="ie=edge">
     <link rel="icon" type="image/png" href="{{asset('favicon.png')}}" />
     <title>@yield('title')</title>
     <meta name="viewport" content="width=device-width, initial-scale=1">
     @yield('metaName')
-<!-- Favicons -->
-    {{--    <link rel="shortcut icon" href="{{asset('images/favicon.ico')}}">--}}
-    {{--    <link rel="apple-touch-icon" href="{{asset('images/icon.png')}}">--}}
-
-<!-- Google font (font-family: 'Roboto', sans-serif; Poppins ; Satisfy) -->
-
-    <!-- Stylesheets -->
-{{--        <link rel="stylesheet" href="{{asset('css/bootstrap.min.css')}}">--}}
-{{--        <link rel="stylesheet" href="{{asset('css/plugins.css')}}">--}}
-{{--        <link rel="stylesheet" href="{{asset('style.css')}}">--}}
-{{--        <link rel="stylesheet" href="{{asset('css/custom.css')}}">--}}
     <link rel="stylesheet" href="{{asset('css/bundle.min.css')}}">
-    <!-- Modernizer js -->
-    {{--    <script src="{{asset('js/vendor/modernizr-3.5.0.min.js')}}"></script>--}}
     @yield('jsonLd')
     <meta name="google-site-verification" content="XE0UPcgosGHbnIHodV2jKI0yD0iQinWI6C2_c7PBynE" />
 </head>
@@ -160,15 +146,7 @@
         </div>
     @endforeach
 </div>
-<!-- //Main wrapper -->
-
-<!-- JS Files -->
-{{--<script src="{{asset('js/vendor/jquery-3.4.1.min.js')}}"></script>--}}
-{{--<script src="{{asset('js/popper.min.js')}}"></script>--}}
-{{--<script src="{{asset('js/bootstrap.min.js')}}"></script>--}}
-{{--<script src="{{asset('js/plugins.js')}}"></script>--}}
-{{--<script src="{{asset('js/active.js')}}"></script>--}}
-{{--<script src="{{asset('js/lazyload.js')}}"></script>--}}
 <script src="{{asset('js/bundle.min.js')}}"></script>
+<script type='text/javascript' data-cfasync='false'>window.purechatApi = { l: [], t: [], on: function () { this.l.push(arguments); } }; (function () { var done = false; var script = document.createElement('script'); script.async = true; script.type = 'text/javascript'; script.src = 'https://app.purechat.com/VisitorWidget/WidgetScript'; document.getElementsByTagName('HEAD').item(0).appendChild(script); script.onreadystatechange = script.onload = function (e) { if (!done && (!this.readyState || this.readyState == 'loaded' || this.readyState == 'complete')) { var w = new PCWidget({c: 'ec4efbb6-04d2-4c9f-99e9-1aa8a6d981dd', f: true }); done = true; } }; })();</script>
 </body>
 </html>
