@@ -56,7 +56,7 @@ class ProductController extends Controller
             $product->data = json_encode($data);
             $product->status = !empty($request->status) ? true : false;
             $product->prior = !empty($request->prior) ? true : false;
-            $product->prior = !empty($request->type) ? 'RENT' : 'SELL';
+            $product->type = !empty($request->type) ? 'RENT' : 'SELL';
             if ($files = $request->file('images')) {
                 $images = [];
                 foreach($files as $file){
